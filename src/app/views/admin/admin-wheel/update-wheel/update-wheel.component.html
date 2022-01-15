@@ -1,0 +1,174 @@
+
+<head>
+  <meta charset="utf-8" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+</head>
+<body class="">
+  <div class="wrapper ">
+   
+    <div class="main-panel" style="font-size: 13px;">
+      <!-- Navbar -->
+      <app-header></app-header>
+<div class="content" style="background-color: #EEEEEE;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title" style="font-size: 13px;">Thêm Vòng Quay</h4>
+          </div>
+          <div class="card-body">       
+           
+                  <div class="col-sm-4">
+                      <div class="col-sm-12" >
+                              <canvas id="canvas" width="336" height="336" style="margin-top: 30px;margin-left: -20px;"></canvas>
+                          <!-- <img alt="" src="{{ bookService.selectedBook.imgBook }}" style="width: 100%;height: 100%;"> -->
+                      </div>
+                      <div class="row" style="padding-bottom: 10px;">
+                          <div class="input-field col s12"style="padding: 0px;">
+                              <label>Kích Hoạt</label>
+                              <div class="id_100">
+                                  <select class="custom-select" style="height:36px;font-size: 14px;padding-left: 10px;"
+                                    name="isActive" id="isActive" (change)="ClickActive($event)">
+                                    <option value="false">Không Kích Hoạt</option>
+                                    <option value="true">Kích Hoạt</option>
+                                  </select>
+                                </div>
+
+                          </div>
+                      </div>
+                  </div>
+                 
+                  <div class="col-sm-8" style="padding:10px;">
+                      <div class="row" style="padding-bottom: 10px;">
+                          <div class="input-field col s12"style="padding: 20px;">
+                              <label>Tên Vòng Quay</label>
+                              <input class="form-control" (input)="InputNameWheel($event)" type="text"  />
+
+                          </div>
+                      </div>
+                      <div class="row" style="padding-bottom: 10px;" >
+                          <div class="col-sm-6" style="padding: 20px;">
+                              <label>3 Khung</label>&nbsp;     
+                              <select class="custom-select" (change)="select0($event)" style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #eae56f;">
+                              <option  value="point"> + Điểm</option>
+                              <option  value="discount">Mã Giảm Giá</option>
+                              <option  value="nope">Không Trúng Thưởng</option>
+                              
+                            </select>
+                              <div class="id_100">
+                                  <input *ngIf="valueselect0=='nope'" disabled class="form-control" (input)="InputOption0($event)" type="number" />
+                                  <input *ngIf="valueselect0=='point'" min="100" max="10000" placeholder="100" step="100" class="form-control" (input)="InputOption0($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                                  <input *ngIf="valueselect0=='discount'" min="5" max="80" placeholder="5" step="5" class="form-control" (input)="InputOption0($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-6" style="padding: 20px;">
+                              <label>4 Khung</label>&nbsp;
+                              <select  class="custom-select" (change)="select1($event)" style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #809fff;">
+                                  <option  value="point"> + Điểm</option>
+                                  <option  value="discount">Mã Giảm Giá</option>
+                                  <option  value="nope">Không Trúng Thưởng</option>
+                              </select>
+                              <div class="id_100">
+                                  <input  *ngIf="valueselect1=='nope'" disabled class="form-control" (input)="InputOption1($event)"  type="number" />
+                                  <input *ngIf="valueselect1=='point'" min="100" max="10000" placeholder="100"step="100" class="form-control" (input)="InputOption1($event)" type="number"onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null" />
+                                  <input *ngIf="valueselect1=='discount'" min="5" max="80" placeholder="5"step="5" class="form-control" (input)="InputOption1($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                           
+                              </div>
+                              </div>
+                          </div>
+                          <div class="row" style="padding-bottom: 10px;" >
+                              <div class="col-sm-6" style="padding: 20px;">
+                                  <label>2 Khung</label>&nbsp;
+                                  <select  class="custom-select" (change)="select2($event)" style="background-color: #4dff4d;height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                      <option  value="point"> + Điểm</option>
+                                      <option  value="discount">Mã Giảm Giá</option>
+                                      <option  value="nope">Không Trúng Thưởng</option>
+                                  </select>
+                                  <div class="id_100">
+                                      <input  *ngIf="valueselect2=='nope'" disabled class="form-control"  (input)="InputOption2($event)" type="number" />
+                                      <input *ngIf="valueselect2=='point'" min="100" max="10000" placeholder="100"step="100" class="form-control" (input)="InputOption2($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                                      <input *ngIf="valueselect2=='discount'" min="5" max="80" placeholder="5"step="5" class="form-control" (input)="InputOption2($event)" type="number"onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null" />
+                               
+                                  </div>
+                              </div>
+  
+                              <div class="col-sm-6" style="padding: 20px;">
+                                  <label>1 Khung</label>&nbsp;
+                                  <select class="custom-select" (change)="select3($event)" style="background-color:#99ddff ;height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                      <option  value="point"> + Điểm</option>
+                                      <option  value="discount">Mã Giảm Giá</option>
+                                      <option  value="nope">Không Trúng Thưởng</option>
+                                  </select>
+                                  <div class="id_100">
+                                      <input  *ngIf="valueselect3=='nope'" disabled class="form-control"  (input)="InputOption3($event)" type="number" />
+                                      <input *ngIf="valueselect3=='point'" min="100" max="10000" placeholder="100"step="100" class="form-control" (input)="InputOption3($event)" type="number"onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null" />
+                                  <input *ngIf="valueselect3=='discount'" min="5" max="80" placeholder="5"step="5" class="form-control" (input)="InputOption3($event)" type="number"onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null" />
+                           
+                                  </div>
+                                  </div>
+                              </div>
+                              <div class="row" style="padding-bottom: 10px;" >
+                                  <div class="col-sm-6" style="padding: 20px;">
+                                      <label>1 Khung</label>&nbsp;
+                                      <select   class="custom-select" (change)="select4($event)" style="background-color: #ff80ff; height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                          <option  value="point"> + Điểm</option>
+                                          <option  value="discount">Mã Giảm Giá</option>
+                                          <option  value="nope">Không Trúng Thưởng</option>
+                                      </select>
+                                      <div class="id_100"> 
+                                      
+                                          <input  *ngIf="valueselect4=='nope'" disabled class="form-control" (input)="InputOption4($event)"  type="number" />
+                                          <input *ngIf="valueselect4=='point'" min="100" max="10000" placeholder="100"step="100" class="form-control" (input)="InputOption4($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                                          <input *ngIf="valueselect4=='discount'" min="5" max="80" placeholder="5"step="5" class="form-control" (input)="InputOption4($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :null"/>
+                        
+                                      </div>
+                                  </div>
+      
+                                  <div class="col-sm-6" style="padding: 20px;">
+                                      <label >1 Khung  </label>&nbsp;
+                                      <select class="custom-select" (change)="select5($event)" style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #ffc299;">
+                                          <option  value="point"> + Điểm</option>
+                                          <option  value="discount">Mã Giảm Giá</option>
+                                          <option  value="nope">Không Trúng Thưởng</option>
+                                      </select>
+                                      <div class="id_100">
+                                          <input  *ngIf="valueselect5=='nope'" disabled class="form-control" (input)="InputOption5($event)"  type="number" />
+                                          <input *ngIf="valueselect5=='point'" min="100" max="10000" placeholder="100"step="100" class="form-control" (input)="InputOption5($event)" type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : null"/>
+                                          <input *ngIf="valueselect5=='discount'" min="5" max="80" placeholder="5"step="5" class="form-control" (input)="InputOption5($event)" type="number"  onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : null"/>
+                                   
+                                      </div>
+                                      </div>
+                                  </div>
+                      </div>
+                    
+                    
+                      
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <button class="btn btn-primary" (click) = "insertWheel();"
+                              style="border-radius: 30px ; width: 100%;height: 50px;font-size: 13px;">Thêm Vòng Quay</button>
+                             
+                          </div>
+                          <div class="col-sm-6">
+                              <button class="btn btn-primary" type="button" (click)="cancel()" 
+                              style="border-radius: 30px; width: 100%;height: 50px;font-size: 13px;">Trở Về</button>
+                          </div>
+                         
+                      </div>
+      
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+</body>

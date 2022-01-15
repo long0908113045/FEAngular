@@ -1,0 +1,145 @@
+
+<head>
+  <meta charset="utf-8" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+</head>
+<body class="">
+  <div class="wrapper ">
+   
+    <div class="main-panel" style="font-size: 13px;">
+      <!-- Navbar -->
+      <app-header></app-header>
+<div class="content" style="background-color: #EEEEEE;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title" style="font-size: 13px;">Thêm Vòng Quay</h4>
+          </div>
+          <div class="card-body">       
+           
+                  <div class="col-sm-4">
+                      <div class="col-sm-12" >
+                              <canvas id="canvas" width="336" height="336" style="margin-top: 30px;margin-left: -20px;"></canvas>
+                          <!-- <img alt="" src="{{ bookService.selectedBook.imgBook }}" style="width: 100%;height: 100%;"> -->
+                      </div>
+                      <div class="row" style="padding-bottom: 10px;">
+                          <div class="input-field col s12"style="padding: 0px;">
+                              <label>Kích Hoạt</label>
+                              <div class="id_100">
+                                  <input class="custom-select" disabled style="height:36px;font-size: 14px;padding-left: 10px;"
+                                    name="isActive" id="isActive" (change)="ClickActive($event)" value="{{isActive}}">
+                                 
+                                
+                                </div>
+
+                          </div>
+                      </div>
+                  </div>
+                 
+                  <div class="col-sm-8" style="padding:10px;">
+                      <div class="row" style="padding-bottom: 10px;">
+                          <div class="input-field col s12"style="padding: 20px;">
+                              <label>Tên Vòng Quay</label>
+                              <input class="form-control" disabled  value="{{nameWheel}}" type="text"  />
+
+                          </div>
+                      </div>
+                      <div class="row" style="padding-bottom: 10px;" >
+                          <div class="col-sm-6" style="padding: 20px;">
+                              <label>3 Khung</label>&nbsp;     
+                              <select class="custom-select" disabled style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #99ddff;">
+                    
+                              
+                            </select>
+                              <div class="id_100">
+                                  <input value="{{option0.text}}" disabled class="form-control"  type="text" />
+                            
+                              </div>
+                          </div>
+
+                          <div class="col-sm-6" style="padding: 20px;">
+                              <label>4 Khung</label>&nbsp;
+                              <select  class="custom-select"disabled style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #eae56f;">
+                          
+                              </select>
+                              <div class="id_100">
+                                <input value="{{option1.text}}" disabled class="form-control"  type="text" />
+                              </div>
+                              </div>
+                          </div>
+                          <div class="row" style="padding-bottom: 10px;" >
+                              <div class="col-sm-6" style="padding: 20px;">
+                                  <label>2 Khung</label>&nbsp;
+                                  <select  class="custom-select" disabled style="background-color: #ff80ff;height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                    
+                                  </select>
+                                  <div class="id_100">
+                                    <input value="{{option2.text}}" disabled class="form-control"  type="text" />
+                                  </div>
+                              </div>
+  
+                              <div class="col-sm-6" style="padding: 20px;">
+                                  <label>1 Khung</label>&nbsp;
+                                  <select class="custom-select" disabled style="background-color:#4dff4d ;height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                  
+                                  </select>
+                                  <div class="id_100">
+                                    <input value="{{option3.text}}" disabled class="form-control"  type="text" />
+                                  </div>
+                                  </div>
+                              </div>
+                              <div class="row" style="padding-bottom: 10px;" >
+                                  <div class="col-sm-6" style="padding: 20px;">
+                                      <label>1 Khung</label>&nbsp;
+                                      <select   class="custom-select" disabled value = "{{valueselect4}}" style="background-color: #809fff; height:30px;font-size: 14px;padding-left: 10px;width:200px;">
+                                    
+                                      </select>
+                                      <div class="id_100"> 
+                                      
+                                        <input value="{{option4.text}}" disabled class="form-control"  type="text" />
+                                      </div>
+                                  </div>
+      
+                                  <div class="col-sm-6" style="padding: 20px;">
+                                      <label >1 Khung  </label>&nbsp;
+                                      <select class="custom-select" disabled  value = "{{valueselect5}}" style="height:30px;font-size: 14px;padding-left: 10px;width:200px;background-color: #ffc299;">
+                                      
+                                      </select>
+                                      <div class="id_100">
+                                        <input value="{{option5.text}}" disabled class="form-control"  type="text" />
+                                      </div>
+                                      </div>
+                                  </div>
+                      </div>
+                    
+                    
+                      
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <button class="btn btn-primary" (click) = "gotoUpdate();"
+                              style="border-radius: 30px ; width: 100%;height: 50px;font-size: 13px;">Chỉnh Sửa</button>
+                             
+                          </div>
+                          <div class="col-sm-6">
+                              <button class="btn btn-primary" type="button" (click)="cancel()" 
+                              style="border-radius: 30px; width: 100%;height: 50px;font-size: 13px;">Trở Về</button>
+                          </div>
+                         
+                      </div>
+      
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+</body>

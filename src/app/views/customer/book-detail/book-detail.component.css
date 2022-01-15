@@ -1,0 +1,364 @@
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-layout72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/prettyPhoto72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce72e6.css';
+@import '../../../../assets/plugins/vc-mega-menu/assets/frontend/vc-mm676a.css';
+@import '../../../../assets/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min20fd.css';
+@import '../../../../assets/themes/bookstore/assets/css/font-awesome/css/font-awesome.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/bootstrap.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/common676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/styles676a.css';
+@import '../../../../assets/themes/bookstore/includes/wp-social-widget/assets/css/social-icons8a54.css';
+
+/* carousel */
+
+
+/* 
+::ng-deep .carousel-left {
+    position: absolute !important;
+    top: 25px !important;
+    left: 0px;
+    z-index: 2 !important;
+}
+
+::ng-deep .carousel-right {
+    position: absolute !important;
+    top: 25px !important;
+    right: 0px;
+    z-index: 2 !important;
+} */
+
+
+/* ::ng-deep .owl-prev {
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    padding-top: 39px !important;
+    padding-bottom: 35px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #333333 !important;
+    margin: 0px !important;
+}
+
+::ng-deep .owl-next {
+    position: absolute !important;
+    right: 0px !important;
+    top: 0px !important;
+    padding-top: 39px !important;
+    padding-bottom: 35px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #333333 !important;
+    margin: 0px !important;
+} */
+
+
+/*  end carousel */
+
+.form-group {
+    width: 30%;
+    margin: 30px;
+}
+
+.form-group .glyphicon {
+    color: #95d7fc;
+}
+
+div#successReview {
+    color: green;
+    background-color: rgb(50, 200, 50, .5);
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* #scroll {
+    overflow-y: auto;
+    height: 400px;
+} */
+
+.carousel-inner .active.left {
+    left: -25%;
+}
+
+.carousel-inner .next {
+    left: 25%;
+}
+
+.carousel-inner .prev {
+    left: -25%;
+}
+
+.carousel-control {
+    width: 4%;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-left: 15px;
+    background-image: none;
+}
+
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
+}
+
+.card-inner {
+    margin-left: 4rem;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: cadetblue(71, 56, 56);
+    float: right;
+}
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+
+/* show gold star when clicked */
+
+.rating:not(:checked)>label:hover,
+
+/* hover current star */
+
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+
+/* hover current star when changing rating */
+
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+
+/* lighten current selection */
+
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+#login:hover {
+    color: green;
+}
+
+#about:hover {
+    color: green;
+}
+
+.container {
+    padding: 2rem 0rem;
+}
+
+.table-image thead td,
+.table-image thead th {
+    border: 0;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.table-image td,
+.table-image th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-image td.qty,
+.table-image th.qty {
+    max-width: 2rem;
+}
+
+.modal-footer {
+    padding-top: 0rem;
+}
+
+::ng-deep .ngxImageZoomContainer {
+    width: 380px !important;
+    height: 380px !important;
+}
+
+::ng-deep .ngxImageZoomFull {
+    width: 900px !important;
+    height: 1000px !important;
+}
+
+.inner {
+    padding: 1em;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.rating {
+    /* float: left;
+  width: 45%;
+  margin-right: 5%;
+  text-align: center; */
+}
+
+.rating-num {
+    color: #333333;
+    font-size: 72px;
+    font-weight: 100;
+    line-height: 1em;
+}
+
+.rating-stars {
+    font-size: 20px;
+    color: #E3E3E3;
+    margin-bottom: .5em;
+}
+
+.rating-stars .active {
+    color: #C09853;
+}
+
+.rating-users {
+    font-size: 14px;
+}
+
+.histo {
+    float: left;
+    width: 100%;
+    font-size: 13px;
+}
+
+.histo-star {
+    float: left;
+    padding: 3px;
+}
+
+.histo-rate {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.bar-block {
+    margin-left: 5px;
+    color: black;
+    display: block;
+    float: left;
+    width: 90%;
+    position: relative;
+}
+
+.bar {
+    padding: 4px;
+    display: block;
+}
+
+#bar-five {
+    width: 0;
+    background-color: #9FC05A;
+}
+
+#bar-four {
+    width: 0;
+    background-color: #ADD633;
+}
+
+#bar-three {
+    width: 0;
+    background-color: #FFD834;
+}
+
+#bar-two {
+    width: 0;
+    background-color: #FFB234;
+}
+
+#bar-one {
+    width: 0;
+    background-color: #FF8B5A;
+}
+
+.btn-default {
+    color: white;
+    background-color: blue;
+}
+
+.btn-change {
+    color: Red;
+    background-color: white;
+}
+
+#OverFlowNameBook {
+    width: auto;
+    
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    padding: 0px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#OverFlowNameBook:hover {
+    /* height: auto; */
+    overflow: visible;
+    color: #008080;
+}
+
+.btn-success {
+    background-color: #008080 !important;
+    color: white !important;
+}
+.btn-success:hover {
+    background-color: #00b894 !important;
+    color: white !important;
+}
+.ngx-pagination {
+    margin-bottom: 0px !important;
+}

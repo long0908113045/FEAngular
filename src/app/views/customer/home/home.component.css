@@ -1,0 +1,177 @@
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-layout72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-smallscreen72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce72e6.css';
+@import '../../../../assets/plugins/yith-woocommerce-wishlist/assets/css/stylee823.css';
+@import '../../../../assets/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.minb2f9.css';
+@import '../../../../assets/plugins/vc-mega-menu/assets/frontend/vc-mm676a.css';
+@import '../../../../assets/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min20fd.css';
+@import '../../../../assets/themes/bookstore/assets/css/font-awesome/css/font-awesome.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/bootstrap.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/common676a.css';
+@import '../../../../assets/plugins/js_composer/assets/css/js_composer.min20fd.css';
+@import '../../../../assets/themes/bookstore/assets/css/styles676a.css';
+@import '../../../../assets/themes/bookstore/includes/wp-social-widget/assets/css/social-icons8a54.css';
+.yith-wcwl-add-button a:before {
+    content: "\f004";
+    font-family: FontAwesome;
+    display: inline-block;
+    line-height: 52px;
+    color: yellow !important;
+    text-align: center;
+    font-size: 14px;
+}
+
+#btnAddToCart_modal {
+    padding-left: 22px !important;
+    padding-top: 18px !important;
+    padding-right: 25px !important;
+    padding-bottom: 18px !important;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnAddToCart {
+    padding-left: 25px !important;
+    padding-top: 18px !important;
+    padding-right: 25px !important;
+    padding-bottom: 18px !important;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+::ng-deep .owl-prev {
+    position: absolute !important;
+    top: 0px !important;
+    left: -50px !important;
+    padding-top: 133px !important;
+    padding-bottom: 133px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #333333 !important;
+    margin: 0px !important;
+}
+
+::ng-deep .owl-next {
+    position: absolute !important;
+    right: -50px !important;
+    top: 0px !important;
+    padding-top: 133px !important;
+    padding-bottom: 133px !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #333333 !important;
+    margin: 0px !important;
+}
+
+.product-wrap {
+    background-color: white !important;
+    margin: 0px 0px;
+    height: 400px;
+}
+
+.test {
+    width: 100%;
+    display: inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    margin: 0px auto;
+    border: 1px red solid;
+}
+
+.btnNav {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+#login:hover {
+    color: green;
+}
+
+#about:hover {
+    color: green;
+}
+
+.bks_product_title_link:hover {
+    color: green;
+}
+
+.carousel-inner .active.left {
+    left: -25%;
+}
+
+.carousel-inner .next {
+    left: 25%;
+}
+
+.carousel-inner .prev {
+    left: -25%;
+}
+
+.carousel-control {
+    width: 4%;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-left: 15px;
+    background-image: none;
+}
+
+#OverFlowNameBook {
+    width: auto;
+    
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    padding: 0px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    
+    height: 50px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#OverFlowNameBook:hover {
+    /* height: auto; */
+    overflow: visible;
+    color: #008080;
+}
+
+#OverFlowNameBooktop3 {
+    width: 170px;
+    height: 35px;
+    overflow: hidden;
+}
+
+#OverFlowNameBooktop3:hover {
+    height: auto;
+    overflow: visible;
+}
+
+
+.btn-success {
+    background-color: #008080 !important;
+    margin-left: 25px;
+}
+.btn-success:hover {
+    /* color: #e17055 !important; */
+    background-color: #00b894 !important;
+}
+.btn-light {
+    border: solid 1,5px black !important;
+}
+.btn-light:hover {
+    background-color: #dfe6e9;
+    color: #008080;
+
+}
+
+.size-bks_post_slider_thumb {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+
+

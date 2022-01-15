@@ -1,0 +1,125 @@
+
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  </head>
+  <body class="">
+    <div class="wrapper ">
+     
+      <div class="main-panel" style="font-size: 13px;">
+        <!-- Navbar -->
+        <app-header></app-header>
+<div class="content" style="background-color: #EEEEEE;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title" style="font-size: 13px;">Thông Tin Sách</h4>
+            </div>
+            <div class="card-body">                
+                    <div class="col-sm-4">
+                        <div class="input-field col s12" >
+
+                            <img alt="" src="{{ bookService.selectedBook.imgBook }}" style="width: 100%;height: 100%;">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <!-- <div class="row" style="padding-bottom: 10px;">
+                            <div class="input-field col s12" style="padding: 0px;">
+                                <label>Hình Ảnh Sách</label>
+                                <input class="form-control" type="text" (change)="getLinkImg($event)" name="imgBook" #name="ngModel" placeholder="Nhập Link Sách"[(ngModel)]="bookService.selectedBook.imgBook" required>
+
+                            </div>
+                        </div> -->
+                        <div class="row" style="padding-bottom: 10px;">
+                            <div class="input-field col s12"style="padding: 0px;">
+                                <label>Tên Sách</label>
+                                <input class="form-control" type="text" name="nameBook" 
+                                value="{{bookService.selectedBook?.nameBook}}" disabled>
+
+                            </div>
+                        </div>
+                        <div class="row"style="padding-bottom: 10px;">
+                            <div class="col-sm-4" style="padding: 0px;">
+                                <label>Loại Sách</label>&nbsp;
+                                <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                <div class="id_100">
+                                    <input class="form-control" type="text" 
+                                     value="{{categoryService.category?.nameCategory}}" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>Tác Giả</label>&nbsp;
+                                <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                <div class="id_100" id="scrollable">
+                                    <input class="form-control" type="text" value="{{authorService.author?.nameAuthor}}" disabled>
+
+                                </div>
+                            </div>
+
+                
+                            <div class="col-sm-4" style="padding: 0px;">
+                                <label>Seri</label>&nbsp;
+                                <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                <div class="id_100">
+                                    <input class="form-control" type="text"  value="{{seriService.seri?.seriName}}" disabled>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row"style="padding-bottom: 10px;">
+                            <div class="col-sm-4" style="padding: 0px;">
+                                <label>Đơn Giá</label>
+                                <input class="form-control" type="text"  value="{{bookService.selectedBook?.priceBook }}" disabled>
+
+                            </div>
+                            <div class="col-sm-4" style="padding: 0px;">
+                                <label>Số lượng</label>
+                                <input class="form-control" type="text"  value="{{bookService.selectedBook?.quantity}}" disabled>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Giảm Giá</label>
+                                <div class="id_100">
+                                    <input class="form-control" type="text"  value="{{bookService.selectedBook?.sale}} %" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"style="padding-bottom: 10px;">
+                            <div class="input-field col s12">
+                                <label>Chi Tiết Sách</label>
+                                <textarea class="form-control" rows="8" type="text" name="detailBook" disabled
+                                 #name="ngModel" [(ngModel)]="bookService.selectedBook.detailBook" placeholder="Nhập Mô Tả Sách"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary" (click) = "updateBookById(bookService.selectedBook._id);"
+                                style="border-radius: 30px ; width: 100%;height: 50px;font-size: 13px;">Cập Nhật Thông Tin Sách</button>
+                               
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-warring" type="button" (click)="cancel()" 
+                                style="border-radius: 30px; width: 100%;height: 50px;font-size: 13px;">Trở Về</button>
+                            </div>
+                           
+                        </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
+
+
+</body>

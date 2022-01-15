@@ -1,0 +1,150 @@
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <!-- End Navbar -->
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h3 class="card-title ">Quản Lý Danh Sách Khuyến Mãi Và Sự Kiện</h3>
+                                </div>
+                                <div class="card-body" style="font-size: 14px;">
+                                    <div class="table-responsive">
+                                        <mat-form-field style="float: left;width: 50%;">
+                                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Tìm kiếm">
+                                            </mat-form-field>
+                                    <button type="button" class="btn btn-blue" style="float: right;font-size: 13px;" (click)="addEvent();">Thêm Mới&nbsp;&nbsp;&nbsp;<span  style="float: right;"><i class="fa fa-plus"></i></span></button>
+
+                                        <div class="mat-elevation-z8">
+                                            <table mat-table [dataSource]="dataSource" matSort style="width: 100%;" id="mytable">
+                                                <ng-container matColumnDef="status">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Trạng Thái</th>
+                                                    <td mat-cell *matCellDef="let row">
+                                                        <b *ngIf="row.status=='1' && row.APromotion.isShow=='true'" style="color: red;">Đang Dùng</b>
+                                                        <b *ngIf="row.status=='1' && row.APromotion.isShow=='false'" style="color: red;">Trong Thời Hạn</b>
+                                                        <b *ngIf="row.status=='0'" style="color:yellowgreen;">Chưa Tới Thời Hạn</b>
+                                                        <span *ngIf="row.status=='2'">Hết Hạn</span>
+                                                    </td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty0">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="imgPromotion">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Hình  </th>
+                                                    <td mat-cell *matCellDef="let row"><img src="{{ row.APromotion.imgPromotion }}" width="40px" height="30px" /></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty1">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="headerPromotion">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Tên</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.APromotion.headerPromotion}}</td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty2">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="discount">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Mức Giảm</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.APromotion.discount}}%</td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty3">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                            
+                                                <ng-container matColumnDef="ifDiscount">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">Điều Kiện</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.APromotion.ifDiscount|currency:"VND"}}</td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty4">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="startDate">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">Bắt Đầu</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.APromotion.startDate}}</td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty5">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="endDate">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">Kết Thúc</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.APromotion.endDate}}</td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty6">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="isShow">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header >Dùng</th>
+                                                    <td mat-cell *matCellDef="let element">
+                                                             <input *ngIf="element.APromotion.isShow=='true'&& element.APromotion.ifDiscount!=null" (click)="ClickUsePromotion(element.APromotion._id)" checked style="margin-top:-8px;margin-left: 10px;"type="checkbox" >
+                                                             <input *ngIf="element.APromotion.isShow=='false'&& element.APromotion.ifDiscount!=null" (click)="ClickUsePromotion(element.APromotion._id)" style="margin-top:-8px;margin-left: 10px;"type="checkbox" >
+                                                         <input *ngIf="element.APromotion.ifDiscount==null"  disabled style="margin-top:-8px;margin-left: 10px;"type="checkbox" >
+                                                    </td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="empty7">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                <ng-container matColumnDef="Details">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Chi Tiết</th>
+                                                    <td mat-cell *matCellDef="let element"> <a mat-raised-button (click)="getCategoryById(element.APromotion._id)"><i class="fas fa-info"></i></a> </td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="Edit">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Cập Nhật  </th>
+                                                    <td mat-cell *matCellDef="let element"> <a mat-raised-button style="color: blue;" (click)="updateCategoryById(element.APromotion._id)"><i class="material-icons">edit</i></a> </td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="Delete">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Xóa </th>
+                                                    <td mat-cell *matCellDef="let element"> <a mat-raised-button style="color: red;" (click)="deleteCategoryById(element.APromotion._id)"><i class="material-icons">delete</i></a> </td>
+                                                </ng-container>
+
+
+                                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                                                </tr>
+                                            </table>
+
+                                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+                                            </mat-paginator>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+</body>

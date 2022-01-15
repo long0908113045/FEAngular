@@ -1,0 +1,79 @@
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+<body class="">
+  <div class="wrapper ">
+    <div class="main-panel" style="font-size: 13px;">
+      <!-- Navbar -->
+   <app-header></app-header>
+      <!-- End Navbar -->
+      <div class="content" style="background-color: #EEEEEE;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h3 class="card-title">Thông tin của bạn</h3>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email</label>
+                          <input type="text" class="form-control" value="{{userService.selectedUser?.email}}" disabled>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" value="{{userService.selectedUser?.username}}" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Role</label>
+                            <input type="text" class="form-control" value="{{userService.selectedUser?.role}}" disabled>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      <button type="submit" class="btn btn-primary pull-right" style="font-size: 13px;" (click) = "moveToAdminChangePassword(userService.selectedUser?._id);">Đổi Mật Khẩu</button>
+                    <button type="submit" class="btn btn-primary pull-right" style="font-size: 13px;" (click) = "moveToAdminProfileEdit(userService.selectedUser?._id);">Cập Nhật Thông Tin</button>
+                   
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="javascript:;">
+                    <img class="img" src="{{ userService.selectedUser?.imageUrl }}" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-category text-gray">{{userService.selectedUser?.username}}</h3>
+                  <!-- <h3 class="card-title">Alec Thompson</h3>
+                  <p class="card-description" style="font-size: 13px;">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  </p>
+                  <a  class="btn btn-primary btn-round" style="font-size: 13px;">Follow</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <app-footer></app-footer>
+    </div>
+   
+  </div>
+
+
+</body>

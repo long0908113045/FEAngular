@@ -1,0 +1,298 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+<body class="archive tax-product_cat term-personal-finance term-13 woocommerce woocommerce-page wpb-js-composer 
+js-comp-ver-4.9.2 vc_responsive ">
+    <div class="wrapper">
+        <!-- //MAIN NAVIGATION -->
+        <!-- <div class="product-header bks-breadcrumb">
+            <div class="container">
+                <h1>DANH SÁCH MÃ KHUYẾN MÃI</h1>
+            </div>
+        </div> -->
+        <div class="container padding-40-v" style="width:none">
+            <div id="main-content" class="col-xs-12 col-sm-9 right">
+                <div id="container" style="font-family: 'Montserrat', sans-serif !important;">
+
+                    <div id="content" role="main">
+                        <div><span style="font-size:22px;padding:15px ;">Danh Sách Yêu Thích</span>
+
+                        </div>
+
+                        <div class="products clearfix" id="categorySach">
+                            <div class="item col-xs-12 col-sm-4 post-78 product type-product
+                                    status-publish has-post-thumbnail product_cat-budgeting-and-finance 
+                                    product_cat-creative-thinking product_cat-personal-finance product_cat-romance last
+                                     instock sale featured shipping-taxable purchasable product-type-simple" *ngFor="let item of listBookFavorite | paginate: { id:'1',itemsPerPage: 6,currentPage: p1 }">
+                                <div class="product-wrap" style="height: 370px;width: 240px;">
+                                    <span *ngIf="item.sale!=0" class="on-sale">-{{item.sale}}%</span>
+                                    <div class="product-image">
+                                        <div class="catalog-image">
+                                            <button (click)="detailBook(item);" style="background-color: transparent;border-color: transparent;">
+                                               <img width="207" height="265" src="{{item.imgBook}}"
+                                                class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
+                                                 alt="book6" sizes="(max-width: 207px) 100vw, 207px" />              
+                                                    <!-- <div class="button yith-wcqv-button" data-product_id="78">
+                                                    <i class="fa fa-search"></i>
+                                               </div> -->
+                                                       </button>
+                                        </div>
+
+                                        <div class="product-buttons" style="background-color: white;width: 250px; text-align: center !important;">
+                                            <div class="add-to-cart-btn" style="background: white !important;">
+                                                <a *ngIf="checkCountMax10" rel="nofollow" data-product_id="78"   data-product_sku="" id="btnAddToCart" data-quantity="1" class="button" data-toggle="modal" data-target="#myModal" (mouseenter)="checkCountCartBeforeAdd(item)" (click)="addToCart(item)"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+                                                <a *ngIf="!checkCountMax10" rel="nofollow" data-product_id="78"  style="background: white !important;" data-product_sku="" id="btnAddToCart" data-quantity="1" class="button" (mouseenter)="checkCountCartBeforeAdd(item)" (click)="addToCart(item)"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+    
+                                            </div>
+                                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
+                                                <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: white !important;padding-bottom: 5px!important; " (click)="favoriteBook(item._id)">
+                                                    <mat-icon *ngIf="!validateFavorite(item._id)" style="color: #008080;margin-top: 20px;margin-bottom: 5px;">favorite_border</mat-icon>
+                                                    <!-- <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#333333;margin-top: 20px;"></i>
+                                                    <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a> -->
+                                                    <mat-icon *ngIf="validateFavorite(item._id)" style="color: #ff7675;; margin-top: 20px;">favorite</mat-icon></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end product-image -->
+                                    <!-- Sale -->
+                                    <div *ngIf="item.sale!=0" class="product-content">
+                                        <h4 class="product_title">
+                                            <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                        </h4>
+                                        <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{item.priceBook*(100-item.sale)/100 | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+
+                                        <del style="font-size: 12px">
+                                                        <span class="woocommerce-Price-amount amount" >
+                                                            {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                    </del>
+                                        </span>
+                                    </div>
+                                    <!-- Don't Sale -->
+                                    <div *ngIf="item.sale==0" class="product-content">
+                                        <h4 class="product_title">
+                                            <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                        </h4>
+                                        <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+                                        </span>
+                                    </div>
+                                    <!-- end product-content -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <pagination-controls style="float:right" id='1' (pageChange)="p1 = $event"></pagination-controls>
+                    </div>
+                </div>
+
+            </div>
+            <!-- main app container -->
+            <div id="shop-sidebar" class="sidebar col-xs-12 col-sm-3 left">
+                <style>
+                    #price-slider {
+                        width: 300px;
+                        height: 80px;
+                        font-size: 14px;
+                    }
+                    
+                    #price-slider input {
+                        width: 90px;
+                        display: inline-block;
+                        font-size: 12px;
+                    }
+                    
+                    #slider-range {
+                        position: relative;
+                        margin: auto;
+                        width: 250px;
+                        height: 13px;
+                        border: solid 1px black;
+                    }
+                    
+                    #slider-range .ui-slider-handle {
+                        position: absolute;
+                        width: 15px;
+                        height: 5px;
+                        margin-top: 2px;
+                        border: solid 1px black;
+                        cursor: pointer;
+                    }
+                    
+                    #slider-range .ui-slider-range {
+                        background: blue;
+                    }
+                    .size-bookstore_product_thumb {
+                        width: 230px !important;
+                         height: 230px !important;
+                    }
+                    #slider-range .ui-corner-all {
+                        border-radius: 0px;
+                    }
+                </style>
+
+                <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories" style="font-family: 'Montserrat', sans-serif !important;">
+                    <h3 class="widget-title">Tài Khoản</h3>
+                    <ul class="product-categories">
+                        <li class="cat-item cat-item-11">
+                            <a *ngIf="loginBy == 'loginbt'" (click)="moveToProfileDetail();">Thông Tin Tài Khoản</a>
+                            <a *ngIf="loginBy == 'loginSocial'" (click)="moveToProfileAccountSocial();">Thông Tin Tài Khoản</a>
+                            <a (click)="goToFavorite()">Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories" style="font-family: 'Montserrat', sans-serif !important;">
+                    <h3 class="widget-title">Đơn Hàng</h3>
+                    <ul class="product-categories">
+                        <li class="cat-item cat-item-11">
+                            <a (click)="goToOrderHistory()">Lịch Sử Mua Hàng</a>
+                            <a (click)="goToDiscountCode()">Danh Sách Mã Khuyến Mãi</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top -->
+        <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+            <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i class="fa fa-arrow-up"></i></button>
+        </div>
+        <!-- Back to Top -->
+    </div>
+    <!--  message alert -->
+    <div *ngIf="alertSucess" name="alertSucess" class="alert alert-success" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;z-index: 1000001;">
+        {{alertMessage}}
+    </div>
+    <div *ngIf="alertFalse" name="alertFalse" class="alert alert-danger" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;z-index: 1000001;">
+        {{alertMessage}}
+    </div>
+    <!--  message alert -->
+    <!-- modal add book -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1000000;">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: #2d3436;font-size: 15px; text-align: left !important; width: 720px;">
+                        <b>Sách <span style="color: #e17055;">{{addABook}}</span> đã được Chọn Mua hàng</b>
+                       
+                    </h5>
+                    <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="font-size: 30px;">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="d-flex justify-content-end" style="font-size: 15px;">
+                        <h5 style="margin-right: 15px;">Bạn có <b>{{TongCount}}</b> cuốn sách trong giỏ hàng</h5>
+                        <h5 style="margin-top: 5px;">Tổng tiền : <b style="color :#ff7675;font-size: 16px;">{{TongTien|currency:"VND"}}</b></h5>
+                    </div>
+
+                    <div class="col mb-2">
+                        <div class="row">
+                            <div class="col-sm-12  col-md-6">
+                                <button id="continue" class="btn btn-block btn-light " style="padding: 10px 16px;" data-dismiss="modal" (click)="goToHome()">Tiếp tục mua hàng</button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-right">
+                                <button class="btn btn-lg btn-block btn-success text-uppercase" type="button" data-dismiss="modal" (click)="goToCartBook()">Giỏ hàng   </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <h4>Có thể bạn sẽ thích</h4>
+                    <div class="modal-footer border-top-0 d-flex justify-content-between" id="scroll" style="font-family: 'Montserrat', sans-serif !important;">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 product type-product
+                        status-publish has-post-thumbnail product_cat-budgeting-and-finance 
+                        product_cat-creative-thinking product_cat-personal-finance product_cat-romance last
+                         instock sale featured shipping-taxable purchasable product-type-simple" *ngFor="let item of BookByCategory  |
+                        paginate: { itemsPerPage: 3,currentPage: p }">
+                                <div class="product-wrap" style="height: 370px;width: 240px;">
+                                    <span *ngIf="item.sale!=0" class="on-sale">-{{item.sale}}%</span>
+                                    <div class="product-image">
+                                        <div class="catalog-image">
+                                            <button (click)="clickGoToBookDetail(item._id);" data-dismiss="modal" style="background-color: transparent;border-color: transparent;">
+                                            <img width="169" height="169" src="{{item.imgBook}}"
+                                class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
+                                 alt="book6" sizes="(max-width: 207px) 100vw, 207px" />              
+                                    <!-- <div class="button yith-wcqv-button" data-product_id="78">
+                                    <i class="fa fa-search"></i>
+                               </div> -->
+                                       </button>
+                                        </div>
+
+                                        <div class="product-buttons" style="background-color: white;width: 250px; text-align: center !important;">
+                                            <div class="add-to-cart-btn" style="background: white !important;">
+                                                <a rel="nofollow" data-product_id="78" data-product_sku=""  data-quantity="1" class="button" (click)="addToCart(item)"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+                                            </div>
+
+                                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
+                                                <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: white !important;padding-bottom: 5px!important; " (click)="favoriteBook(item._id)">
+                                                    <mat-icon *ngIf="!validateFavorite(item._id)" style="color: #008080;margin-top: 20px;margin-bottom: 5px;">favorite_border</mat-icon>
+                                                    <!-- <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#333333;margin-top: 20px;"></i>
+                                                    <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a> -->
+                                                    <mat-icon *ngIf="validateFavorite(item._id)" style="color: #ff7675;; margin-top: 20px;">favorite</mat-icon></a>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end product-image -->
+                                    <!-- Sale -->
+                                    <div *ngIf="item.sale!=0" class="product-content">
+                                        <h4 class="product_title">
+                                            <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                        </h4>
+                                        <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{item.priceBook*(100-item.sale)/100 | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+
+                                        <del style="font-size: 12px">
+                                                        <span class="woocommerce-Price-amount amount" >
+                                                            {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                    </del>
+                                        </span>
+                                    </div>
+                                    <!-- Don't Sale -->
+                                    <div *ngIf="item.sale==0" class="product-content">
+                                        <h4 class="product_title">
+                                            <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                        </h4>
+                                        <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+                                        </span>
+                                    </div>
+                                    <!-- end product-content -->
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

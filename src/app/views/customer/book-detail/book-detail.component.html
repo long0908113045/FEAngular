@@ -1,0 +1,1447 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<!-- <link rel='stylesheet' href='https://icodefy.com/Tools/iZoom/js/Vendor/fancybox/helpers/jquery.fancybox-thumbs.css'>
+<link rel='stylesheet' href='https://icodefy.com/Tools/iZoom/css/zoom.css'> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+
+
+
+<body class="single single-product postid-76 woocommerce woocommerce-page wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd">
+    <div class="wrapper">
+        <!-- //MAIN NAVIGATION -->
+        <!-- <div class="product-header bks-breadcrumb">
+            <div class="container">
+                <h1>Shop</h1>
+                <ul class="breadcrumb clearfix"></ul>
+            </div>
+        </div> -->
+        <div class="container padding-40-v">
+
+            <div id="container">
+                <div id="content" role="main">
+
+                    <div itemscope itemtype="http://schema.org/Product" id="product-76" class="post-76 product type-product status-publish has-post-thumbnail product_cat-budgeting-and-finance
+ product_cat-creative-thinking product_cat-fantasy product_cat-historical-fiction product_cat-people-management
+ product_cat-personal-finance product_cat-romance product_cat-science-fiction product_tag-historical product_tag-romance-storie
+  first instock featured shipping-taxable purchasable product-type-simple">
+
+                        <div class="images col-sm-12 col-xl-8 md-col-10">
+                            <!-- <a itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
+                                <img width="350" id="zoom_03" height="450" src="{{bookService.selectedBook?.imgBook}}"
+                                    class="attachment-shop_single size-shop_single wp-post-image" alt="book7"
+                                    title="book7" /></a> -->
+                            <!-- <div class="pdp-image-gallery-block">
+                                <div class="gallery_pdp_container">
+                                    <div id="gallery_pdp"> -->
+
+                            <div class="col-sm-12 ">
+                                <ngx-image-zoom [thumbImage]=bookService.selectedBook?.imgBook
+                                [fullImage]=bookService.selectedBook?.imgBook [magnification]="2" [zoomMode]="'click'" [enableScrollZoom]="true"
+                                 [enableLens]="true" [circularLens]="true" [lensWidth]="200" [lensHeight]="200" ></ngx-image-zoom>
+                                <div class="col-sm-12" style="text-align: center;">
+                                    <i class="icon-zoom-in"></i> Rê chuột lên hình để phóng to
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="summary entry-summary col-sm-4 col-xl-4  md-col-4 mr-3">
+
+                            <h2 itemprop="name" class="product_title entry-title">{{bookService.selectedBook?.nameBook}}
+                            </h2>
+                            <div itemprop="offers">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <span *ngIf="(bookService.selectedBook.rate.average/0.5)%2==0">
+                                        <span *ngFor="let i of [].constructor(bookService.selectedBook.rate.average)" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                        <span *ngFor="let i of [].constructor(5-(bookService.selectedBook.rate.average))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                        </span>
+                                        <span *ngIf="(bookService.selectedBook.rate.average/0.5)%2==1">
+                                            <span *ngFor="let i of [].constructor(bookService.selectedBook.rate.average-0.5)" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                        <span *ngFor="let i of [].constructor((bookService.selectedBook.rate.average/0.5)%2)" class="float-right"><i class="text-warning fas fa-star-half-alt"></i></span>
+                                        <span *ngFor="let i of [].constructor(5-(bookService.selectedBook.rate.average-0.5+1))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-4" id="moreRating">
+                                        <a type="button" class="btn btn-link" *ngIf="bookService.selectedBook.rate.count > 0">(Xem thêm
+                                            {{bookService.selectedBook.rate.count}} đánh giá)</a>
+                                    </div>
+                                </div>
+                                <!-- Sale -->
+                                <span *ngIf="bookService.selectedBook?.sale!=0">
+                                    <b style="color:red;font-size: 18px;">
+                                        {{ bookService.selectedBook?.priceBook*(100-bookService.selectedBook?.sale)/100 | currency:'VND' }}
+                                    </b>
+                                    <span style="font-size: 12px;">
+                                        <span style="text-decoration: line-through;color:darkgrey;">
+                                            {{bookService.selectedBook?.priceBook|currency:"VND"}}
+                                        </span><b style="color:red;"> | -{{bookService.selectedBook?.sale}}%</b>
+                                </span>
+                                </span>
+                                <!-- Don't Sale -->
+                                <b *ngIf="bookService.selectedBook?.sale==0" style="color:red;font-size: 18px;">
+                                        {{ bookService.selectedBook?.priceBook | currency:'VND' }}
+                                </b>
+
+                                <meta itemprop="price" content="200" />
+                                <meta itemprop="priceCurrency" content="USD" />
+                                <link itemprop="availability" href="http://schema.org/InStock" />
+
+                            </div>
+                            <div class="book-by-author" >
+                                <a class="book-author" style="background: #008080 !important;"  href="#">By {{authorService.author?.nameAuthor}}</a>
+                            </div>
+                            <div itemprop="description" class="description">
+                                <b *ngIf="bookService.selectedBook.quantity <= 20" style="color: red;">Còn {{bookService.selectedBook.quantity}} Cuốn Sách</b>
+                                <b *ngIf="bookService.selectedBook.quantity > 20">Còn {{bookService.selectedBook.quantity}} Cuốn Sách</b>
+                                   <div class="product_meta">
+                                <span class="posted_in">Categories: <a href="#" rel="tag"> {{categoryService.category?.nameCategory}}</a></span>
+                            </div>
+
+                            </div>
+
+                            <form class="cart" method="post" enctype='multipart/form-data' #form="ngForm" (ngSubmit)="addToCart(bookService.selectedBook,form.value)">
+                                <div class="quantity">
+                                    
+
+                                </div>
+                                <input type="hidden" name="add-to-cart" value="76" />
+                                <button *ngIf="checkedAddBook" type="submit" class="single_add_to_cart_button button alt" data-toggle="modal" data-target="#myModal" style=" text-transform: uppercase; background-color: #008080 !important;color: white!important;">Chọn Mua</button>
+                                <button *ngIf="!checkedAddBook" type="submit" class="single_add_to_cart_button button alt" style=" text-transform: uppercase;background-color: #008080 !important; color: white !important;">Chọn Mua</button>
+                            </form>
+                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
+                                <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer;background-color: #008080 !important;" (click)="favoriteBook(bookService.selectedBook._id)">
+                                    <mat-icon *ngIf="!validateFavorite(bookService.selectedBook._id)" style="margin-left:45px;color:#FFF;margin-top: 15px;"> favorite_border</mat-icon>
+                                    <!-- <i *ngIf="!validateFavorite(bookService.selectedBook._id)" class="fa fa-heart" style="margin-left:50px;color:#FFF;margin-top: 20px;"></i> -->
+                                    <!-- <i *ngIf="validateFavorite(bookService.selectedBook._id)" class="fa fa-heart" style="margin-left:50px;color:#ff6b6b;margin-top: 20px;"></i> -->
+                                    <mat-icon *ngIf="validateFavorite(bookService.selectedBook._id)" style="margin-left:45px;color:#ff6b6b;margin-top: 15px;"> favorite</mat-icon>
+
+                                 </a>
+                            </div>
+
+                            <div class="clear"></div>
+                            <button href="#" data-toggle="modal" data-value='' id="TryRead" data-target="#modalTryRead" class="single_add_to_cart_button button alt" style="text-transform: uppercase;background-color: #008080 !important;color: white !important;">Đọc
+                                thử</button>
+                            <!-- <button class="single_add_to_cart_button button alt">Đọc thử</button> -->
+
+
+                        </div>
+                        <!-- .summary -->
+
+
+                        <div class="woocommerce-tabs wc-tabs-wrapper" >
+                            <ul class="tabs wc-tabs">
+                                <li class="description_tab active" >
+                                    <a href="#tab-description">Description</a>
+                                </li>
+                                <li class="reviews_tab" >
+                                    <a href="#tab-reviews">Reviews</a>
+                                </li>
+                            </ul>
+                            <div class="panel entry-content wc-tab" id="tab-description">
+
+                                <h2>Nội Dung Sách</h2>
+
+                                <p>{{bookService.selectedBook?.detailBook}}</p>
+                            </div>
+                            <div class="panel entry-content wc-tab" id="tab-reviews" style="display: none;">
+                                <div id="reviews" class="woocommerce-Reviews">
+                                    <div id="comments">
+                                        <h2 class="woocommerce-Reviews-title">Reviews</h2>
+                                        <div id="successReview" *ngIf="statusRating == true" style="color: #008080;text-align: center;">Đánh giá thành công!</div>
+                                    </div>
+                                    <div id="review_form_wrapper">
+                                        <div id="review_form">
+                                            <div id="respond" class="comment-respond">
+                                                <form #ratingForm="ngForm" (ngSubmit)="onSubmit(ratingForm)" style="color: #555555;">
+                                                    <div class="col-sm-6">
+                                                        <div class="col-sm-4">
+                                                            <label for="rating">Your Rating</label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <fieldset class="rating">
+                                                                <input type="radio" id="star5" name="star" value="5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                                                <input type="radio" id="star4half" name="star" value="4.5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                                <input type="radio" id="star4" name="star" value="4" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                                                <input type="radio" id="star3half" name="star" value="3.5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                                <input type="radio" id="star3" name="star" value="3" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="full" for="star3" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2half" name="star" value="2.5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                                <input type="radio" id="star2" name="star" value="2" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                                <input type="radio" id="star1half" name="star" value="1.5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                                <input type="radio" id="star1" name="star" value="1" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                                                <input type="radio" id="starhalf" name="star" value="0.5" #name="ngModel" [(ngModel)]="ratingService.rating.star" />
+                                                                <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12" >
+                                                        <label for="comment" style="margin-left: 16px;">Your Review
+                                                                <span class="required">*</span>
+                                                            </label>
+                                                    </div>
+
+                                                    <p class="comment-form-comment" style="font-family: 'Montserrat', sans-serif !important;">
+
+                                                        <textarea style="font-family: 'Inter', sans-serif !important;" #name="ngModel" [(ngModel)]="ratingService.rating.review"  name="review" cols="45" rows="8" aria-required="true" required>123213
+                                                        </textarea  ></p>
+                                                    <input style="font-family: 'Inter', sans-serif !important;" type="hidden" name="bookID" required />
+                                                    <input type='hidden' name='userID' />
+                                                    <p lass="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit" />
+                                                    </p>
+                                                </form>
+                                            </div>
+                                            <!-- #respond -->
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" id="ratingList">
+                            <h2 class="text-center">KHÁCH HÀNG NHẬN XÉT</h2>
+                            <!-- <div class="inner"> -->
+                                <!-- <div class="col-sm-3">
+                                    <div class="rating">
+                                        <span class="rating-num">4.0/5</span>
+                                        <div class="rating-stars">
+                                            <span><i class="active icon-star"></i></span>
+                                            <span><i class="active icon-star"></i></span>
+                                            <span><i class="active icon-star"></i></span>
+                                            <span><i class="active icon-star"></i></span>
+                                            <span><i class="icon-star"></i></span>
+                                        </div>
+                                        <div class="rating-users">
+                                            ({{countRating}} nhận xét)
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-sm-6">
+                                    <div class="histo">
+                                        <div class="five histo-rate">
+                                            <span class="histo-star">
+                                                <i class="active icon-star"></i> 5 </span>
+                                            <span class="bar-block">
+                                                <span id="bar-five" class="bar">
+                                                    <span>566,784</span>&nbsp;
+                                            </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="four histo-rate">
+                                            <span class="histo-star">
+                                                <i class="active icon-star"></i> 4 </span>
+                                            <span class="bar-block">
+                                                <span id="bar-four" class="bar">
+                                                    <span>171,298</span>&nbsp;
+                                            </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="three histo-rate">
+                                            <span class="histo-star">
+                                                <i class="active icon-star"></i> 3 </span>
+                                            <span class="bar-block">
+                                                <span id="bar-three" class="bar">
+                                                    <span>94,940</span>&nbsp;
+                                            </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="two histo-rate">
+                                            <span class="histo-star">
+                                                <i class="active icon-star"></i> 2 </span>
+                                            <span class="bar-block">
+                                                <span id="bar-two" class="bar">
+                                                    <span>44,525</span>&nbsp;
+                                            </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="one histo-rate">
+                                            <span class="histo-star">
+                                                <i class="active icon-star"></i> 1 </span>
+                                            <span class="bar-block">
+                                                <span id="bar-one" class="bar">
+                                                    <span>136,457</span>&nbsp;
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-sm-3" style="margin: 0 auto;">
+                                    <p>Nhận xét về sản phẩm</p>
+                                    <button type="submit" class="single_add_to_cart_button button alt" style="border-radius: 10px;">Viết nhận xét của bạn</button>
+                                </div> -->
+                            <!-- </div> -->
+
+                            <div class="card">
+                                <div class="card-body" *ngFor="let rating of ListRatingAccount | slice: startPageRatings:paginationLimitRatings;">
+                                        <div class="row" >
+                                            <div class="col-md-2">
+                                                <img src="{{rating.imageUrl}}" style="width:96px" class="img img-rounded img-fluid" />
+                                            </div>
+                                            <div class="col-md-10">
+                                                <a class="float-left">
+                                                    <strong>{{rating.username}}</strong></a>
+                                                &nbsp;
+
+                                                    <span *ngIf="(rating.star/0.5)%2==0">
+                                                        <span *ngFor="let i of [].constructor(5-(5-(rating.star)))" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                                    <span *ngFor="let i of [].constructor(5-(rating.star))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                                    </span>
+                                                    <span *ngIf="(rating.star/0.5)%2==1">
+                                                        <span *ngFor="let i of [].constructor(rating.star-0.5)" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                                    <span *ngFor="let i of [].constructor((rating.star/0.5)%2)" class="float-right"><i class="text-warning fas fa-star-half-alt"></i></span>
+                                                    <span *ngFor="let i of [].constructor(5-(rating.star-0.5+1))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                                    </span>
+                                                <div class="clearfix"></div>
+                                                <p  style="font-family: 'Inter', sans-serif !important;">{{rating.review}}</p>
+                                                <p>
+                                                    <a class="float-right btn text-white btn-danger" id="dislike">
+                                                        <i class="fa fa-thumbs-down"></i>  <span class="number_dislike"> &nbsp;0</span></a>&nbsp;
+                                                    <a class="float-right btn text-white btn-danger" id="like">
+                                                        <i class="fa fa-thumbs-up"></i> <span class="number_dislike"> &nbsp;0</span></a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                </div>
+                                <h3 style="text-align: center;"><a  *ngIf="paginationLimitRatings <  ListRatingAccount.length" (click)="showMoreRatings()"
+                                    style="cursor: pointer;font-size: 20px;">
+                                        Xem Thêm...
+                                    </a></h3>
+                                    <h3 style="text-align: center;"><a *ngIf="paginationLimitRatings ==  ListRatingAccount.length" (click)="showLessRatings()"
+                                style="cursor: pointer;font-size: 20px;">
+                                    Thu Gọn
+                                   </a></h3>
+                            </div>
+                        </div>
+                        <div class="related products">
+                            <h2>Các sách liên quan</h2>
+                            <div class="products clearfix">
+                                <div class="item col-xs-12 col-sm-4 post-78 product type-product
+                                status-publish has-post-thumbnail product_cat-budgeting-and-finance
+                                product_cat-creative-thinking product_cat-personal-finance product_cat-romance last
+                                 instock sale featured shipping-taxable purchasable product-type-simple" *ngFor="let item of books  |
+                                  paginate: { id: '1',itemsPerPage: 3,currentPage: p }">
+                                    <div class="product-wrap" style="height: 370px;width: 100%;">
+                                       <span *ngIf="item.sale!=0" class="on-sale">-{{item.sale}}%</span>
+                                        <div class="product-image">
+                                            <div class="catalog-image">
+                                                <button (click)="clickGoToBookDetail(item._id);" style="background-color: transparent;border-color: transparent;">
+                                                    <img  src="{{item.imgBook}}"
+                                                        class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
+                                                        alt="book6" sizes="(max-width: 207px) 100vw, 207px" />
+                                                    <!-- <div class="button yith-wcqv-button" data-product_id="78">
+                                                        <i class="fa fa-search"></i>
+                                                    </div> -->
+                                                </button>
+                                            </div>
+
+                                            <div class="product-buttons" style="background-color: white !important;">
+                                                <div *ngIf="checkedAddBook" class="add-to-cart-btn" style="background-color:white !important"><a rel="nofollow" data-product_id="78" data-product_sku=""
+                                                     data-quantity="1" class="button" (mouseenter)="checkGetCountBookDetailEqual10(item._id)" (click)="clickAddBookOnModel(item)" data-toggle="modal"
+                                                        data-target="#myModal"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+                                                </div>
+                                                <div *ngIf="!checkedAddBook" class="add-to-cart-btn"><a rel="nofollow" data-product_id="78" data-product_sku="" data-quantity="1" class="button"
+                                                     (mouseenter)="checkGetCountBookDetailEqual10(item._id)" (click)="clickAddBookOnModel(item)"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+                                                </div>
+                                                <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
+                                                    <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: white !important;padding-bottom: 5px!important; " (click)="favoriteBook(item._id)">
+                                                        <mat-icon *ngIf="!validateFavorite(item._id)" style="color: #008080;margin-top: 20px;margin-bottom: 5px;">favorite_border</mat-icon>
+                                                        <!-- <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#333333;margin-top: 20px;"></i>
+                                                        <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a> -->
+                                                        <mat-icon *ngIf="validateFavorite(item._id)" style="color: #ff7675;; margin-top: 20px;">favorite</mat-icon></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end product-image -->
+                                           <!-- Sale -->
+                                                <div *ngIf="item.sale!=0" class="product-content">
+                                                    <h4 class="product_title">
+                                                        <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                                    </h4>
+                                                    <span class="price" >
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount" style="color: #ff7675;">
+                                                                {{item.priceBook*(100-item.sale)/100 | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+
+                                                    <del style="font-size: 14px">
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                    </del>
+                                                    </span>
+                                                </div>
+                                                <!-- Don't Sale -->
+                                                <div *ngIf="item.sale==0" class="product-content">
+                                                    <h4 class="product_title">
+                                                        <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                                    </h4>
+                                                    <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount" style="color: #ff7675;">
+                                                                {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+                                                    </span>
+                                                </div>
+                                        <!-- end product-content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- #product-76 -->
+                            <div>
+                                <pagination-controls id='1' (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+        <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i
+                class="fa fa-arrow-up"></i></button>
+    </div>
+    <!-- Back to Top -->
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1000000;">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0" style="padding-top: 10px !important; padding-bottom: 0px !important;">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: #2d3436;font-size: 15px; text-align: left !important;width: 720px;">
+                        <b >Sách <span style="color: #e17055;">{{nameBookShowOnModel}}</span> đã được thêm vào giỏ hàng</b>
+                        
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="font-size: 30px;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="d-flex justify-content-end" style="font-size: 15px;">
+                        <h5 style="margin-right: 20px ">Bạn có <b>{{TongCount}}</b> Cuốn sách trong giỏ hàng</h5>
+                        <h5 style="margin-top: 8px;">Tổng tiền : <b style="color :#ff7675;font-size: 16px;">{{TongTien|currency:"VND"}}</b></h5>
+                    </div>
+
+                    
+                    <h4>Có thể bạn sẽ thích</h4>
+                    <div class="modal-footer border-top-0 d-flex justify-content-between" id="scroll">
+                        <div class="row" style="font-family: 'Montserrat', sans-serif !important;">
+                            <div class="col-12 col-md-6 col-lg-4 product type-product
+                            status-publish has-post-thumbnail product_cat-budgeting-and-finance
+                            product_cat-creative-thinking product_cat-personal-finance product_cat-romance last
+                             instock sale featured shipping-taxable purchasable product-type-simple" *ngFor="let item of books  |
+                            paginate: { id: '2',itemsPerPage: 3,currentPage: p1 }">
+                                <div class="product-wrap" style="height: 370px;width: 240px;">
+                                   <span *ngIf="item.sale!=0" class="on-sale">-{{item.sale}}%</span>
+                                    <div class="product-image">
+                                        <div class="catalog-image">
+                                            <button (click)="clickGoToBookDetail(item._id);" data-dismiss="modal" style="background-color: transparent;border-color: transparent;">
+                                                <img width="207" height="265" src="{{item.imgBook}}"
+                                                    class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image"
+                                                    alt="book6" sizes="(max-width: 207px) 100vw, 207px" />
+                                                <!-- <div class="button yith-wcqv-button" data-product_id="78">
+                                                    <i class="fa fa-search"></i>
+                                                </div> -->
+                                            </button>
+                                        </div>
+
+                                        <div class="product-buttons" style="background-color: white;width: 250px; text-align: center !important;">
+                                            <div class="add-to-cart-btn" id = "add-to-cart-btn" style="background: white !important;">
+                                                <a rel="nofollow" data-product_id="78" data-product_sku="" data-quantity="1"
+                                                class="button" (click)="clickAddBookOnModel(item)"><mat-icon style="color: #008080;margin-top: 20px;"> local_grocery_store</mat-icon></a>
+                                            </div>
+
+                                            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-78">
+                                                <a rel="nofollow" data-product-id="78" data-product-type="simple" style="cursor:pointer; background: white !important;padding-bottom: 5px!important; " (click)="favoriteBook(item._id)">
+                                                    <mat-icon *ngIf="!validateFavorite(item._id)" style="color: #008080;margin-top: 20px;margin-bottom: 5px;">favorite_border</mat-icon>
+                                                    <!-- <i *ngIf="!validateFavorite(item._id)" class="fa fa-heart" style="color:#333333;margin-top: 20px;"></i>
+                                                    <i *ngIf="validateFavorite(item._id)" class="fa fa-heart" style="color: #ff6b6b;margin-top: 20px;"></i> </a> -->
+                                                    <mat-icon *ngIf="validateFavorite(item._id)" style="color: #ff7675;; margin-top: 20px;">favorite</mat-icon></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end product-image -->
+                                       <!-- Sale -->
+                                                <div *ngIf="item.sale!=0" class="product-content">
+                                                    <h4 class="product_title">
+                                                        <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                                    </h4>
+                                                    <span class="price" >
+                                                        <small >
+                                                            <span class="woocommerce-Price-amount amount" style="color: #ff7675;">
+                                                                {{item.priceBook*(100-item.sale)/100 | currency:"VND"}}
+                                                    </span>
+                                                        </small>
+
+                                                    <del style="font-size: 14px">
+                                                        <span class="woocommerce-Price-amount amount" >
+                                                            {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                    </del>
+                                                    </span>
+                                                </div>
+                                                <!-- Don't Sale -->
+                                                <div *ngIf="item.sale==0" class="product-content">
+                                                    <h4 class="product_title">
+                                                        <div id="OverFlowNameBook" href="bookDetail">{{item.nameBook}}</div>
+                                                    </h4>
+                                                    <span class="price">
+                                                        <small>
+                                                            <span class="woocommerce-Price-amount amount" style="color: #ff7675;">
+                                                                {{item.priceBook | currency:"VND"}}
+                                                    </span>
+                                                </small>
+                                                    </span>
+                                                </div>
+                                    <!-- end product-content -->
+                                </div>
+
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                    <div style="font-family: 'Montserrat', sans-serif !important;margin-bottom: none !important;">
+                        <pagination-controls id="2" (pageChange)="p1 = $event"></pagination-controls>
+                    </div>
+                    <div class="col mb-2" style="padding: 10px 0px;">
+                        <div class="row">
+                            <div class="col-sm-12  col-md-6">
+                                <button id="continue" class="btn btn-block btn-light " style="padding: 10px 16px;" data-dismiss="modal" (click)="goToHome()">Tiếp tục mua hàng</button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-right">
+                                <button class="btn btn-lg btn-block btn-success text-uppercase" type="button" data-dismiss="modal" (click)="goToCartBook()">Giỏ hàng</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- The Modal Doc Thu-->
+    <div class="modal fade" id="modalTryRead" data-backdrop="false" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="margin-top: 55px;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="width: 100%;height: 100%;">
+                <div class="modal-header" style="height: 66px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img class="logo-img" src="../../../../assets/img/02/BookstoreLogo.png" alt="Book Store" />
+                            </div>
+                            <div class="col-sm-4">
+                                <h3 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;font-weight: 800;">ĐỌC THỬ</h3>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div id="mydiv">
+                        <iframe id="frame" [src]="linkRead | safe: 'resourceUrl'" width="100%" height="400"> </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="alertFalse" name="alertFalse" class="alert alert-danger" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1000001;">
+        {{alertMessage}}
+    </div>
+    <!--  message alert -->
+</body>
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+
+    .wrapper a img {
+        border: 1px solid transparent !important;
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .read-more {
+        color: #27ae61 !important;
+    }
+
+    .read-more:hover {
+        color: #229955 !important;
+    }
+
+    .btn-link:after {
+        background: #229955 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+
+     .size-bookstore_product_thumb {
+        width: 240px !important;
+        height: 240px !important;
+    }
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+
+    .topbar i {
+        color: #27ae61;
+    }
+
+    .header {
+        background-color: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #27ae61;
+        color: #ffffff;
+        font-family: Roboto Slab;
+        font-size: 13px;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: white ;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: #229955 !important;
+        color: #ffffff !important;
+    }
+
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #008080;
+    }
+
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+
+    .bks-post-slider .post-grid .post-content .post-date:after {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #27ae61 rgba(0, 0, 0, 0);
+    }
+    .row {
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 5px;
+    
+}
+    .woocommerce .woocommerce-info:before,
+    .single .post-meta .author a,
+    .woocommerce .woocommerce-message:before,
+    .read-more,
+    .bks-product-list-wrap .bks-products-list-container li .product-content .amount,
+    .slick-dots li.slick-active button:before,
+    .product-wrap span.price {
+        color: #ff7675 !important;
+    }
+
+    ul.post-categories li a:after {
+        border-right-color: #27ae61;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: #27ae61 !important;
+        border: 2px solid #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop,
+        .vc-mm-menu-v .vc-nav-on-desktop,
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-mm-mega-cont {}
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop>li:hover>a,
+        .vc-mm-menu-v .vc-nav-on-desktop>li:hover>a {
+            background-color: #229955 !important;
+            color: #ffffff !important;
+        }
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-h .vc-mm-child-title,
+        .vc-mm-menu-v .vc-mm-child-title {
+            border-color: #229955 !important;
+        }
+    }
+
+    .read-more:hover {
+        color: #229955;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li {
+        background-color: #229955 !important;
+        color: #333333 !important;
+    }
+
+    .bks-cart-widget .minicart-button {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-left: 0px;
+    }
+
+    .bks-promo {
+        background-color: #B7A930;
+    }
+
+    body .social-links li a .social-icon {
+        background: #24a9e2;
+        color: #ffffff;
+    }
+
+    body .social-links li a .social-icon:hover,
+    body .social-links li a .social-icon:focus {
+        background: #1e73be;
+        color: #ffffff;
+    }
+
+    body .social-links li .social-icon,
+    .social-icon:after {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    }
+</style>
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">
+    .vc_custom_1454662051521 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .vc_custom_1454597513538 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .vc_custom_1454683539961 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 3px !important;
+        margin-left: 0px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        background-color: #27ae61 !important;
+    }
+
+    .vc_custom_1454754526304 {
+        padding-top: 60px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .vc_custom_1454685996679 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background: #424242 url(../../assets/img/01/ada9a09acea936d776a6f55c82778c43_XLf41b.jpg?id=10) !important;
+    }
+
+    .vc_custom_1454679052819 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .vc_custom_1454597724991 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background-color: #f5f5f5 !important;
+    }
+
+    .vc_custom_1456470598040 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 30px !important;
+        padding-right: 30px !important;
+        padding-bottom: 30px !important;
+        padding-left: 30px !important;
+        background-color: #27ae61 !important;
+    }
+
+    .vc_custom_1454686431101 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .vc_custom_1454686645519 {
+        margin-top: 30px !important;
+        border-bottom-width: 30px !important;
+    }
+
+    .vc_custom_1454829417282 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .vc_custom_1454830425190 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-right: 150px !important;
+    }
+
+    .vc_custom_1454830469549 {
+        padding-top: 30px !important;
+        padding-left: 90px !important;
+    }
+</style>
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .read-more {
+        color: #27ae61 !important;
+    }
+
+    .read-more:hover {
+        color: #229955 !important;
+    }
+
+    .btn-link:after {
+        background: #229955 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+
+    .topbar i {
+        color: #27ae61;
+    }
+
+    .header {
+        background-color: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #27ae61;
+        color: #ffffff;
+        font-family: Roboto Slab;
+        font-size: 13px;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .product-header {
+        background: url(../../assets/img/01/title.jpg);
+        background-color: #e5e5e5;
+    }
+
+    .page-header {
+        background: url(http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/Bookshelf-1200.jpg);
+        background-color: #555555;
+    }
+
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: white ;
+        color: #333333 !important;
+    }
+
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: white !important;
+        color: #ffffff !important;
+    }
+
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #27ae61;
+    }
+
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+
+    .bks-post-slider .post-grid .post-content .post-date:after {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #27ae61 rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .woocommerce-info:before,
+    .single .post-meta .author a,
+    .woocommerce .woocommerce-message:before,
+    .read-more,
+    .bks-product-list-wrap .bks-products-list-container li .product-content .amount,
+    .slick-dots li.slick-active button:before,
+    .product-wrap span.price {
+        color: #27ae61 !important;
+    }
+
+    ul.post-categories li a:after {
+        border-right-color: #27ae61;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: #27ae61 !important;
+        border: 2px solid #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop,
+        .vc-mm-menu-v .vc-nav-on-desktop,
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-mm-mega-cont {}
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop>li:hover>a,
+        .vc-mm-menu-v .vc-nav-on-desktop>li:hover>a {
+            background-color: #229955 !important;
+            color: #ffffff !important;
+        }
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-h .vc-mm-child-title,
+        .vc-mm-menu-v .vc-mm-child-title {
+            border-color: #229955 !important;
+        }
+    }
+
+    .read-more:hover {
+        color: #229955;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+
+    .bks-cart-widget .minicart-button {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-left: 0px;
+    }
+
+    .bks-promo {
+        background-color: #B7A930;
+    }
+
+    body .social-links li a .social-icon {
+        background: #24a9e2;
+        color: #ffffff;
+    }
+
+    body .social-links li a .social-icon:hover,
+    body .social-links li a .social-icon:focus {
+        background: #1e73be;
+        color: #ffffff;
+    }
+
+    body .social-links li .social-icon,
+    .social-icon:after {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    }
+</style>

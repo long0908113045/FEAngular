@@ -1,0 +1,20 @@
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-layout72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-smallscreen72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce72e6.css';
+@import '../../../../assets/plugins/yith-woocommerce-wishlist/assets/css/stylee823.css';
+@import '../../../../assets/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.minb2f9.css';
+@import '../../../../assets/plugins/vc-mega-menu/assets/frontend/vc-mm676a.css';
+@import '../../../../assets/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min20fd.css';
+@import '../../../../assets/themes/bookstore/assets/css/font-awesome/css/font-awesome.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/bootstrap.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/common676a.css';
+@import '../../../../assets/plugins/js_composer/assets/css/js_composer.min20fd.css';
+@import '../../../../assets/themes/bookstore/assets/css/styles676a.css';
+@import '../../../../assets/themes/bookstore/includes/wp-social-widget/assets/css/social-icons8a54.css';
+#login:hover {
+    color: green;
+}
+
+#about:hover {
+    color: green;
+}

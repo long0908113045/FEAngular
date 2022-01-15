@@ -1,0 +1,33 @@
+@import '../../../../../assets/css_admin/css/material-dashboard.css';
+.dropdown-menu .dropdown-item {
+    font-size: 12px;
+}
+
+#banner_image {
+    min-height: calc(100vh - 250px);
+    background-image: url("../../../../../assets/css_admin/img/sidebar-1.jpg");
+}
+
+div[data-image] {
+    background-image: attr(data-image url);
+}
+
+.sidebar {
+    background: linear-gradient( rgba(172, 138, 138, 0.3), rgba(171, 161, 247, 1)), url('../../../../../assets/css_admin/img/sidebar-1.jpg');
+}
+
+
+/* .mat-cell:nth-child(3), .mat-header-cell:nth-child(3) {
+    flex: 0 0 120%;
+} */
+
+.w-75 {
+    width: 100px;
+}
+
+.custom-select {
+    -webkit-appearance: listbox;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+}

@@ -1,0 +1,264 @@
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+<body class="">
+    <div class="wrapper ">
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <div id="container">
+                        <div id="content" role="main">
+                            <!-- <div style="background-color: #EEE;height:60px;width: 100%;text-align: center;">
+                            <b style="top:15px;position: relative;">Lịch sử mua hàng của bạn đang trống </b></div> -->
+                            <div class="container">
+
+                                <div class="row order_sorter" style="width: 100%;">
+                                    <ul id="toggle-orders" style="margin: auto;">
+                                        <li class="first"></li>
+                                        <li class="oh selected"><a type="button">Đơn Hàng Chờ Xác Nhận</a></li>
+                                        <li class="fo"><a type="button">Đơn Hàng Đang Giao</a></li>
+                                        <li class="com"><a type="button">Đơn Hàng Đã Giao</a></li>
+                                    </ul>
+                                </div>
+                                <!-- new (Cash)-->
+                                <div class="row" id="order-history">
+                                    <div *ngFor="let order of list_Order_New| paginate: { id:'1',itemsPerPage: 4,currentPage: p1 }; let $index=index;" style="width: 100%;">
+                                        <div class="order-container" *ngIf="order.status=='New'">
+                                            <div (click)="expandRow($index)">
+                                                <div class="header" style="margin-bottom: 0px;">
+                                                    <div class="row">
+                                                        <div class="col-sm-3"><span>Ngày Đặt Hàng</span><span>{{order.orderDate}}</span></div>
+                                                        <div *ngIf="order.discountCode!=0" class="col-sm-3"><span>Tổng Đơn Hàng</span>
+                                                            <span style="font-size: 11px;">
+                                                                {{order.totalPrice|currency:"VND"}} - {{(order.totalPrice*order.discountCode)/100|currency:"VND"}}({{order.discountCode}}%) = <b style="color: red;">{{(order.totalPrice*(100-order.discountCode))/100|currency:"VND"}}</b>
+                                                            </span>
+                                                        </div>
+                                                        <div *ngIf="order.discountCode==0" class="col-sm-3"><span>Tổng Đơn Hàng</span><span>{{order.totalPrice|currency:"VND"}} </span></div>
+                                                        <div class="col-sm-2">
+                                                            <div *ngFor="let cus of list_all_customer">
+                                                                <div *ngIf="cus._id==order.customerID">
+                                                                    <span>Người Đặt Hàng</span><span>{{cus.name}} (SĐT:{{cus.phone}})</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="col-sm-1"></div> -->
+
+                                                        <div class="col-sm-2"><span>Trạng thái</span>
+                                                            <span *ngIf="order.paymentOption=='Cash'">Chờ Xác Nhận </span>
+                                                            <span *ngIf="order.paymentOption=='Online'">Chờ Vận Chuyển </span>
+                                                        </div>
+
+                                                        <div class="col-sm-2">
+                                                            <div class="box" style="padding: 0;">
+                                                                <a (click)="ClickGiaoHang(order)" class="btn-default">Giao Hàng</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="$index === expandedIndex">
+                                                <div *ngFor="let orderDetail of list_OrderDetail">
+                                                    <div class="box" *ngIf="orderDetail.orderID==order._id">
+                                                        <div *ngFor="let book of list_Book">
+                                                            <div class="row" *ngIf="book._id==orderDetail.bookID">
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book._id}}</p>
+                                                                </div>
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book.nameBook}}</p>
+                                                                </div>
+                                                                <div class="col-sm-2" style="margin-top:10px">
+                                                                    <p>{{orderDetail.price*(100-orderDetail.sale)/100|currency:"VND"}}
+                                                                        <br>
+                                                                        <span *ngIf="orderDetail.sale!=0" style="top:0px;position: relative;font-size: 14px;">
+                                                                        <span style="text-decoration: line-through;color:darkgrey;">
+                                                                            {{orderDetail.price|currency:"VND"}}
+                                                                        </span><b style="color:red;"> | -{{orderDetail.sale}}%</b>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class="col-sm-1" style="margin-top:10px">
+                                                                    <p>x {{orderDetail.count}}</p>
+                                                                </div>
+                                                                <div class="col-sm-1">
+                                                                    <img style="border:0px" src={{book.imgBook}} width="100px" height="100px" alt="" />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="IsCheckNew">
+                                        <pagination-controls id='1' (pageChange)="p1 = $event"></pagination-controls>
+                                    </div>
+                                    <!-- end of order-container -->
+
+
+                                </div>
+                                <!-- end of Order History -->
+                                <!-- inprogress -->
+
+                                <div id="future-orders">
+                                    <div *ngFor="let order of list_Order_Inpro | paginate: { id:'2',itemsPerPage: 4,currentPage: p2 }; let $index=index;">
+                                        <div class="order-container" style="margin-right: 15px;margin-left: -15px;" *ngIf="order.status=='Inprogress'">
+                                            <div (click)="expandRow($index)">
+                                                <div class="header" style="margin-bottom: 0px;">
+                                                    <div class="row">
+                                                        <div class="col-sm-3"><span>Ngày Đặt Hàng</span><span>{{order.orderDate}}</span></div>
+                                                        <div *ngIf="order.discountCode!=0" class="col-sm-3"><span>Tổng Đơn Hàng</span>
+                                                            <span style="font-size: 11px;">
+                                                                {{order.totalPrice|currency:"VND"}} - {{(order.totalPrice*order.discountCode)/100|currency:"VND"}}({{order.discountCode}}%) = <b style="color: red;">{{(order.totalPrice*(100-order.discountCode))/100|currency:"VND"}}</b>
+                                                            </span>
+                                                        </div>
+                                                        <div *ngIf="order.discountCode==0" class="col-sm-3"><span>Tổng Đơn Hàng</span><span>{{order.totalPrice|currency:"VND"}} </span></div>
+                                                        <div class="col-sm-2">
+                                                            <div *ngFor="let cus of list_all_customer">
+                                                                <div *ngIf="cus._id==order.customerID"><span>Người Đặt Hàng</span><span>{{cus.name}} (SĐT:{{cus.phone}})</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2"><span>Trạng thái</span><span>Đang vận chuyển</span></div>
+                                                        <div class="col-sm-2">
+                                                            <div class="box" style="padding: 0;">
+                                                                <a (click)="ClickDaGiao(order)" class="btn-default">Đã Nhận Hàng</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="$index === expandedIndex">
+                                                <div *ngFor="let orderDetail of list_OrderDetail">
+                                                    <div class="box" *ngIf="orderDetail.orderID==order._id">
+                                                        <div *ngFor="let book of list_Book">
+                                                            <div class="row" *ngIf="book._id==orderDetail.bookID">
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book._id}}</p>
+                                                                </div>
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book.nameBook}}</p>
+                                                                </div>
+                                                                <div class="col-sm-2" style="margin-top:10px">
+                                                                    <p>{{orderDetail.price*(100-orderDetail.sale)/100|currency:"VND"}}
+                                                                        <br>
+                                                                        <span *ngIf="orderDetail.sale!=0" style="top:0px;position: relative;font-size: 14px;">
+                                                                        <span style="text-decoration: line-through;color:darkgrey;">
+                                                                            {{orderDetail.price|currency:"VND"}}
+                                                                        </span><b style="color:red;"> | -{{orderDetail.sale}}%</b>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class="col-sm-1" style="margin-top:10px">
+                                                                    <p>x {{orderDetail.count}}</p>
+                                                                </div>
+                                                                <div class="col-sm-1">
+                                                                    <img style="border:0px" src={{book.imgBook}} width="100px" height="100px" alt="" />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="IsCheckInprogress">
+                                        <pagination-controls id='2' (pageChange)="p2 = $event"></pagination-controls>
+                                    </div>
+                                </div>
+                                <!-- end of order-container -->
+                                <!-- end of future-orders -->
+                                <!-- done    -->
+                                <div id="done-orders">
+                                    <div *ngFor="let order of list_Order_Done  | paginate: { id:'3',itemsPerPage: 4,currentPage: p3 }; let $index=index;">
+                                        <div class="order-container" style="margin-right: 15px;margin-left: -15px;" *ngIf="order.status=='Done'">
+                                            <div (click)="expandRow($index)">
+                                                <div class="header" style="margin-bottom: 0px;">
+                                                    <div class="row">
+                                                        <div class="col-sm-3"><span>Ngày Đặt Hàng</span><span>{{order.orderDate}}</span></div>
+                                                        <div *ngIf="order.discountCode!=0" class="col-sm-3"><span>Tổng Đơn Hàng</span>
+                                                            <span style="font-size: 11px;">
+                                                                {{order.totalPrice|currency:"VND"}} - {{(order.totalPrice*order.discountCode)/100|currency:"VND"}}({{order.discountCode}}%) = <b style="color: red;">{{(order.totalPrice*(100-order.discountCode))/100|currency:"VND"}}</b>
+                                                            </span>
+                                                        </div>
+                                                        <div *ngIf="order.discountCode==0" class="col-sm-3"><span>Tổng Đơn Hàng</span><span>{{order.totalPrice|currency:"VND"}} </span></div>
+                                                        <div class="col-sm-2">
+                                                            <div *ngFor="let cus of list_all_customer">
+                                                                <div *ngIf="cus._id==order.customerID"><span>Người Đặt Hàng</span><span>{{cus.name}} (SĐT:{{cus.phone}})</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2"></div>
+                                                        <div class="col-sm-2"><span>Trạng thái</span><span>Đã giao hàng </span></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="$index === expandedIndex">
+                                                <div *ngFor="let orderDetail of list_OrderDetail">
+                                                    <div class="box" *ngIf="orderDetail.orderID==order._id">
+                                                        <div *ngFor="let book of list_Book">
+                                                            <div class="row" *ngIf="book._id==orderDetail.bookID">
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book._id}}</p>
+                                                                </div>
+
+                                                                <div class="col-sm-3" style="margin-top:10px">
+                                                                    <p>{{book.nameBook}}</p>
+                                                                </div>
+                                                                <div class="col-sm-2" style="margin-top:10px">
+                                                                    <p>{{orderDetail.price*(100-orderDetail.sale)/100|currency:"VND"}}
+                                                                        <br>
+                                                                        <span *ngIf="orderDetail.sale!=0" style="top:0px;position: relative;font-size: 14px;">
+                                                                        <span style="text-decoration: line-through;color:darkgrey;">
+                                                                            {{orderDetail.price|currency:"VND"}}
+                                                                        </span><b style="color:red;"> | -{{orderDetail.sale}}%</b>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+
+                                                                <div class="col-sm-1" style="margin-top:10px">
+                                                                    <p>x {{orderDetail.count}}</p>
+                                                                </div>
+                                                                <div class="col-sm-1">
+                                                                    <img style="border:0px" src={{book.imgBook}} width="100px" height="100px" alt="" />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="IsCheckDone">
+                                        <pagination-controls id='3' (pageChange)="p3 = $event"></pagination-controls>
+                                    </div>
+                                    <!-- end of order-container -->
+
+
+                                </div>
+                                <!-- end of future-orders -->
+
+                            </div>
+                            <!-- container ends -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+
+
+</body>

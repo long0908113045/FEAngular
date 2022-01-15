@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+<body class="archive tax-product_cat term-personal-finance term-13 woocommerce woocommerce-page wpb-js-composer 
+js-comp-ver-4.9.2 vc_responsive ">
+    <div class="wrapper">
+        <!-- //MAIN NAVIGATION -->
+        <!-- <div class="product-header bks-breadcrumb">
+            <div class="container">
+                <h1>DANH SÁCH MÃ KHUYẾN MÃI</h1>
+            </div>
+        </div> -->
+        <div class="container padding-40-v">
+            <div id="main-content" class="col-xs-12 col-sm-9 right">
+                <div class="table-responsive">
+
+                        <div class="col-xs-12 col-sm-3 left">
+                            <div class="profile">
+                                <div class="profile-image">
+                                    <img style="width: 300px;" src="{{accountSocial.imageUrl}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-xs-12 col-sm-9 right">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Tài Khoản</legend>
+                                <div class="parent">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group purple-border">
+                                                <label for="exampleFormControlTextarea4">Email</label>
+                                                <input class="form-control" type="text" name="email" value="{{accountSocial.email}}" style="font-size: 15px;" required readonly/>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group purple-border">
+                                                <label for="exampleFormControlTextarea4">Tên Tài Khoản</label>
+                                                <input class="form-control" type="text" name="username" value="{{accountSocial.username}}" readonly style="font-size: 15px;" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group purple-border">
+                                                <label for="exampleFormControlTextarea4">Quyền Tài Khoản</label>
+                                                <input *ngIf="accountSocial.role=='CUSTOMER'" class="form-control" type="text" name="role" readonly value="Khách Hàng" style="font-size: 15px;" required>
+                                                <input *ngIf="accountSocial.role=='ADMIN'" class="form-control" type="text" name="role" readonly value="Chủ Cửa Hàng" style="font-size: 15px;" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="margin-top:30px;">
+                                        <div class="row">
+
+                                            <div class="col-sm-4">
+                                                <button class="buttona" type="button" (click)="cancel();" style="color: black;"> Quay Lại</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- End of container -->
+                </div>
+            </div>
+            <!-- main app container -->
+            <div id="shop-sidebar" class="sidebar col-xs-12 col-sm-3 left">
+                <style>
+                    #price-slider {
+                        width: 300px;
+                        height: 80px;
+                        font-size: 14px;
+                    }
+                    
+                    #price-slider input {
+                        width: 90px;
+                        display: inline-block;
+                        font-size: 12px;
+                    }
+                    
+                    #slider-range {
+                        position: relative;
+                        margin: auto;
+                        width: 250px;
+                        height: 13px;
+                        border: solid 1px black;
+                    }
+                    
+                    #slider-range .ui-slider-handle {
+                        position: absolute;
+                        width: 15px;
+                        height: 5px;
+                        margin-top: 2px;
+                        border: solid 1px black;
+                        cursor: pointer;
+                    }
+                    
+                    #slider-range .ui-slider-range {
+                        background: blue;
+                    }
+                    
+                    #slider-range .ui-corner-all {
+                        border-radius: 0px;
+                    }
+                </style>
+
+                <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+                    <h3 class="widget-title">Tài Khoản</h3>
+                    <ul class="product-categories">
+                        <li class="cat-item cat-item-11">
+                            <a *ngIf="loginBy == 'loginbt'" (click)="moveToProfileDetail();">Thông Tin Tài Khoản</a>
+                            <a *ngIf="loginBy == 'loginSocial'" (click)="moveToProfileAccountSocial();">Thông Tin Tài Khoản</a>
+                            <a (click)="goToFavorite();">Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+                    <h3 class="widget-title">Đơn Hàng</h3>
+                    <ul class="product-categories">
+                        <li class="cat-item cat-item-11">
+                            <a (click)="goToOrderHistory()">Lịch Sử Mua Hàng</a>
+                            <!-- <a (click)="goToDiscountCode()">Danh Sách Mã Khuyến Mãi</a> -->
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top -->
+        <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+            <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i class="fa fa-arrow-up"></i></button>
+        </div>
+        <!-- Back to Top -->
+    </div>
+
+
+
+</body>

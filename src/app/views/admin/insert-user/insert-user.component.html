@@ -1,0 +1,95 @@
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+<body class="">
+  <div class="wrapper ">
+    <div class="main-panel" style="font-size: 13px;">
+      <!-- Navbar -->
+      <app-header></app-header>
+      <!-- End Navbar -->
+      <div class="content" style="background-color: #EEEEEE;">
+        <div class="container-fluid">
+          
+          <div class="row">
+            <div class="col-md-8">
+                  <p *ngIf = "errString != null" style="color: red; font-size: 15px;text-align: center;">{{errString}}</p>
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h3 class="card-title">Thêm Người Dùng</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" >
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email</label>
+                          <input type="text" class="form-control" name="email"  formControlName="email">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" (change)="getUserName($event)" name="username" formControlName="username">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Mật Khẩu</label>
+                            <input type="password" class="form-control"  name="password" formControlName="password">
+                        </div>
+                          </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Nhập Lại Mật Khẩu</label>
+                            <input type="password" class="form-control"  name="repassword" formControlName="repassword">
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label>Role</label>&nbsp;
+                            <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                <select class="custom-select" style="height:36px;font-size: 14px;padding-left: 10px;"
+                                name="role"  formControlName="role">
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="CUSTOMER">CUSTOMER</option>
+                            </select>
+                        </div>
+                      </div>
+                    <button type="button" class="btn btn-warring pull-right" style="font-size: 13px;" (click) = "cancel();">Trở Về</button>
+        
+                    <button type="submit" class="btn btn-info pull-right" style="font-size: 13px;" (click) = "register();">Lưu Thông Tin</button>
+                  
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="javascript:;">
+                    <img class="img" src="https://cdn.dribbble.com/users/2095589/screenshots/4166422/media/4f5df9f81aa355998185eefc94fc4456.png?compress=1&resize=400x300" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-category text-gray">{{ getUsername }}</h3>
+               
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <app-footer></app-footer>
+    
+    </div>
+   
+  </div>
+
+ 
+</body>

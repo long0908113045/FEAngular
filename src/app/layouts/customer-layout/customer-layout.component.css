@@ -1,0 +1,299 @@
+@import '../../../assets/plugins/woocommerce/assets/css/woocommerce-layout72e6.css';
+@import '../../../assets/plugins/woocommerce/assets/css/woocommerce-smallscreen72e6.css';
+@import '../../../assets/plugins/woocommerce/assets/css/woocommerce72e6.css';
+@import '../../../assets/plugins/yith-woocommerce-wishlist/assets/css/stylee823.css';
+@import '../../../assets/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.minb2f9.css';
+@import '../../../assets/plugins/vc-mega-menu/assets/frontend/vc-mm676a.css';
+@import '../../../assets/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min20fd.css';
+@import '../../../assets/themes/bookstore/assets/css/font-awesome/css/font-awesome.min676a.css';
+@import '../../../assets/themes/bookstore/assets/css/bootstrap.min676a.css';
+@import '../../../assets/themes/bookstore/assets/css/common676a.css';
+@import '../../../assets/plugins/js_composer/assets/css/js_composer.min20fd.css';
+@import '../../../assets/themes/bookstore/assets/css/styles676a.css';
+@import '../../../assets/themes/bookstore/includes/wp-social-widget/assets/css/social-icons8a54.css';
+#login:hover {
+    color: green;
+}
+
+#about:hover {
+    color: green;
+}
+
+.bks_product_title_link:hover {
+    color: green;
+}
+
+.carousel-inner .active.left {
+    left: -25%;
+}
+
+.carousel-inner .next {
+    left: 25%;
+}
+
+.carousel-inner .prev {
+    left: -25%;
+}
+
+.carousel-control {
+    width: 4%;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-left: 15px;
+    background-image: none;
+}
+
+body {
+    font-family: arial;
+}
+
+
+/* Sets the background image for the wheel */
+
+td.the_wheel {
+    background-image: url(../../../assets/spinner/img_spin/wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+}
+
+
+/* Do some css reset on selected elements */
+
+h1,
+p {
+    margin: 0;
+}
+
+div.power_controls {
+    margin-right: 70px;
+}
+
+div.html5_logo {
+    margin-left: 70px;
+}
+
+
+/* Styles for the power selection controls */
+
+table.power {
+    background-color: #cccccc;
+    cursor: pointer;
+    border: 1px solid #333333;
+}
+
+table.power th {
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1 {
+    background-color: #6fe8f0;
+}
+
+td.pw2 {
+    background-color: #86ef6f;
+}
+
+td.pw3 {
+    background-color: #ef6f6f;
+}
+
+.btn {
+    padding: 10px 20px;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* Style applied to the spin button once a power has been selected */
+
+.clickable {
+    cursor: pointer;
+}
+
+
+/* Other misc styles */
+
+.margin_bottom {
+    margin-bottom: 5px;
+}
+
+#wheelSpinnerImg {
+    width: 50px;
+    float: right;
+    position: absolute;
+    top: 4px;
+    right: 60px;
+}
+
+#InputSearch {
+    position: absolute;
+    top: 9px;
+    left: 600px;
+    height: 50px;
+    width: 45%;
+}
+
+#InputSearch .inputicon {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #999999;
+    z-index: 1;
+}
+
+#InputSearch .searchHeader {
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    border-color: lightslategrey;
+    height: 40px;
+    font-style: italic;
+    width: 100%;
+}
+
+#InputSearch .buttonSearch {
+    position: absolute;
+    background-color: #C1C1C1;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    width: 12%;
+    font-weight: bold;
+    top: 1px;
+    right: 1px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+    #wheelSpinnerImg {
+        width: 30px;
+        float: right;
+        position: absolute;
+        top: 15px;
+        right: 60px;
+    }
+}
+
+#headSet {
+    padding: 0px 15px !important;
+}
+
+#headSet2 {
+    top: 58px !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #f5f6fa;
+}
+
+
+
+
+
+
+
+/* 
+.searchBar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: none;
+    border-radius: 30px;
+    
+    width: 320px;
+    padding-left: 20px;
+    margin-left: 200px;
+    }
+.searchInput{
+    color: #333333;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0px;
+    display: none;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: 0.4s;
+    }
+
+    .searchBar:hover > .searchInput{
+    display: inline;
+    padding: 0 10px;
+    width: 250px;
+    
+    transition:  4s;
+    border: none;
+    }
+
+    .searchBar:hover > .searchIcon{
+    background: white;
+    
+    }
+    .searchBar:hover {
+        background: white;
+    }
+    .searchIcon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    } */
+
+
+    .searchBar {
+        width: 320px;
+        height: 40px;
+        display: flex;
+        background-color: white;
+        padding-left: 20px;
+        margin-left: 180px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+    .searchInput {
+        border-radius: 20px;
+        color: #333333 !important;
+        background-color: none;
+        /* border: none !important; */
+        outline: 0;
+        border: 0;
+        height: 40px;
+        font-size: 12px;
+    }
+    .searchIcon {
+        height: 40px;
+        width: 40px;
+        
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color:white;
+    }
+    
+.drop-options {
+    color: #333333 !important;
+
+}
+.drop-options:hover {
+    color: #008080 !important;
+}
+#username {
+    color: #008080 !important;
+    font-size: 14px !important;
+}
+    

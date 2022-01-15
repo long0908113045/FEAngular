@@ -1,0 +1,148 @@
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+</head>
+
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h3 class="card-title" style="font-size: 13px;">Thông Tin Sách</h3>
+                                </div>
+                                <div class="card-body">
+                                    <!-- <p *ngIf="alertSucess" style="color: green;font-size: 16px;text-align: center;">{{alertMessage}}</p> -->
+                                    <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" class="appointment-form" style="color: #555555;">
+                                        <div class="col-sm-4">
+                                            <div class="input-field col s12">
+
+                                                <img alt="" src="{{ bookService.selectedBook.imgBook }}" style="width: 100%;height: 100%;">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Hình Ảnh Sách</label>
+                                                    <input class="form-control" type="text" name="imgBook" #name="ngModel" placeholder="Nhập Link Sách" [(ngModel)]="bookService.selectedBook.imgBook" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Tên Sách</label>
+                                                    <input class="form-control" type="text" name="nameBook" #name="ngModel" [(ngModel)]="bookService.selectedBook.nameBook" placeholder="Nhập Tên Sách" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="col-sm-4" style="padding: 0px;">
+                                                    <label>Loại Sách</label>&nbsp;
+                                                    <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                                    <div class="id_100">
+                                                        <select class="custom-select" style="height:36px;font-size: 14px;padding-left: 10px;" name="categoryID" id="selectCategory" [(ngModel)]="bookService.selectedBook.categoryID">
+                                <!-- <option ></option> -->
+                                <option *ngFor ="let category of categoryService.categories"
+                                value="{{category._id}}">{{category.nameCategory}}</option>
+                                </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label>Tác Giả</label>&nbsp;
+                                                    <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                                    <div class="id_100" id="scrollable">
+                                                        <select class="custom-select" name="authorID" style="height:36px;width:190px;font-size: 14px;padding-left: 10px;" id="selectAuthor" [(ngModel)]="bookService.selectedBook.authorID">
+                                    <!-- <option ></option> -->
+                                    <option *ngFor ="let author of authorService.authors"
+                                    value="{{author._id}}">{{author.nameAuthor}}</option>
+                                    </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-4" style="padding: 0px;">
+                                                    <label>Seri</label>&nbsp;
+                                                    <!-- <input  class="form-control" type="text" name="donGiaMon"  placeholder="Nhập Tên Loại Sách"> -->
+                                                    <div class="id_100">
+                                                        <select class="custom-select" style="height:36px;font-size: 14px;padding-left: 10px;" name="seriID" id="selectSeri" #name="ngModel" [(ngModel)]="bookService.selectedBook.seriID">
+                                <option value="">Không có Seri</option>
+                                <option *ngFor ="let seri of seriService.series"
+                                value="{{seri._id}}">{{seri.seriName}}</option>
+                                </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="col-sm-4" style="padding: 0px;">
+                                                    <label>Đơn Giá</label>
+                                                    <input class="form-control" type="text" #name="ngModel" name="priceBook" [(ngModel)]="bookService.selectedBook.priceBook">
+
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label>Giảm Giá</label>
+                                                    <div class="id_100">
+                                                        <select class="custom-select" name="sale" #name="ngModel" [(ngModel)]="bookService.selectedBook.sale" required style="padding-left: 10px;width: 190px;height: 36px;font-size: 14px;">
+                                <!-- <option ></option> -->
+                           
+                                <option   value=5 >5%</option>
+                                <option value=10 >10%</option>
+                                <option value=15 >15%</option>
+                                <option value=20 >20%</option>
+                                <option value=25 >25%</option>
+                              </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4" style="padding: 0px;">
+                                                    <label>Số lượng</label>
+                                                    <input class="form-control" type="text" #name="ngModel" name="quantityBook" [(ngModel)]="bookService.selectedBook.quantity">
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Link Đọc Thử</label>
+                                                    <input class="form-control" type="text" name="tryRead" #name="ngModel" [(ngModel)]="bookService.selectedBook.tryRead" placeholder="Nhập Tệp Đọc Thử" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Chi Tiết Sách</label>
+                                                    <textarea class="form-control" type="text" name="detailBook" #name="ngModel" [(ngModel)]="bookService.selectedBook.detailBook" placeholder="Nhập Mô Tả Sách"></textarea>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <button class="btn btn-info" type="submit" style="border-radius: 30px ; width: 100%;height: 50px;font-size: 13px;">Lưu Thông Tin</button>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <button class="btn btn-warring" type="button" (click)="cancel()" style="border-radius: 30px; width: 100%;height: 50px;font-size: 13px;">Trở Về</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+</body>

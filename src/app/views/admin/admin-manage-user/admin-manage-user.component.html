@@ -1,0 +1,105 @@
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+  </head>
+  <body class="">
+    <div class="wrapper ">
+     
+      <div class="main-panel" style="font-size: 13px;">
+        <!-- Navbar -->
+     <app-header></app-header>
+        <!-- End Navbar -->
+        <div class="content"  style="background-color: #EEEEEE;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h3 class="card-title ">Quản lý người dùng</h3>
+                </div>
+                  <div class="card-body" style="font-size: 14px;">
+                    <div class="table-responsive">
+                      <mat-form-field style="float: left;width: 50%;">
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Tìm kiếm">
+                        </mat-form-field>
+                    <button type="button"  class="btn btn-blue" style="float: right;font-size: 13px;" (click) = "insertUser();">Thêm Người Dùng&nbsp;&nbsp;&nbsp;<span  style="float: right;"><i class="fa fa-plus"></i></span></button>
+
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSource" matSort style="width: 100%;" id = "mytable">
+
+                                <ng-container matColumnDef="imageUrl">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: center;"> Avatar </th>
+                                    <td mat-cell *matCellDef="let row" ><img src="{{ row.imageUrl }}" width="100px"/></td>
+                                  </ng-container>
+
+                              <ng-container matColumnDef="empty1">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                <td mat-cell *matCellDef="let row"></td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: center;"> Email </th>
+                                <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="username">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: center;"> Username </th>
+                                <td mat-cell *matCellDef="let row"> {{ row.username }}</td>
+                              </ng-container> 
+                      
+                              <ng-container matColumnDef="empty2">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                <td mat-cell *matCellDef="let row"></td>
+                              </ng-container>
+                              
+                              <ng-container matColumnDef="Details">
+                                <th mat-header-cell *matHeaderCellDef class="aln-center"> Chi Tiết </th>
+                                <td mat-cell *matCellDef="let element"  style="text-align: center;"> <a mat-raised-button    
+                                     (click)="getUserById(element._id)"><i class="fas fa-info"></i></a> </td>
+                          </ng-container>
+
+                            <ng-container matColumnDef="Edit">
+                                <th mat-header-cell *matHeaderCellDef class="aln-center"> Cập Nhật  </th>
+                                <td mat-cell *matCellDef="let element"  style="text-align: center;"> <a mat-raised-button style="color: blue;"
+                                     (click)="updateUserById(element._id)"><i class="material-icons">edit</i></a> </td>
+                          </ng-container>
+                        
+                          <ng-container matColumnDef="Delete">
+                            <th mat-header-cell *matHeaderCellDef class="aln-center"> Xóa Thông Tin </th>
+                            <td mat-cell *matCellDef="let element"  style="text-align: center;"> <a mat-raised-button style="color: red;"
+                                 (click)="deleteUserById(element._id)"><i class="material-icons">delete</i></a> </td>
+                          </ng-container>
+                        
+                    
+                              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                              <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                              </tr>
+                            </table>
+
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+                           </mat-paginator>
+                         
+                      </div>
+                      
+                     
+                    </div>
+                    <!-- <button mat-mini-fab style=" border: 2px solid #4CAF50;">5</button>
+                    <button mat-mini-fab style=" border: 2px solid #4CAF50;">10</button>
+                    <button mat-mini-fab style=" border: 2px solid #4CAF50;">25</button>
+                    <button mat-mini-fab style=" border: 2px solid #4CAF50;">100</button> -->
+                   
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+    <app-footer></app-footer>
+      </div>
+    </div>
+   
+</body>

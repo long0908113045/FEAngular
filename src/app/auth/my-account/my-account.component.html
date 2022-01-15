@@ -1,0 +1,416 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="UTF-8" />
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+
+
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .read-more {
+        color: #27ae61 !important;
+    }
+
+    .read-more:hover {
+        color: #229955 !important;
+    }
+
+    .btn-link:after {
+        background: #229955 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: Roboto Slab;
+    }
+
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+
+    .topbar i {
+        color: #27ae61;
+    }
+
+    .header {
+        background-color: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #27ae61;
+        color: #ffffff;
+        font-family: Roboto Slab;
+        font-size: 13px;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .product-header {
+        background: url(../wp-content/uploads/2016/01/title.jpg);
+        background-color: #e5e5e5;
+    }
+
+    .page-header {
+        background: url(../../../assets/wp-content/uploads/2016/01/title.jpg);
+        background-color: #555555;
+    }
+
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: #008080 !important;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: #229955 !important;
+        color: #ffffff !important;
+    }
+
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #27ae61;
+    }
+
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+</style>
+
+
+
+<body>
+    <div class="login-wrap" style="font-family: 'Montserrat', sans-serif !important;">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="margin:25px 50px;" >Đăng nhập</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab" style="margin:25px 50px;">Đăng ký</label>
+            <div class="login-form">
+                <div class="sign-in-htm" [formGroup]="loginForm">
+                    <div class="group">
+                        <div *ngIf="errStringLogin != null">
+                            <p style="color: red;text-align: center;">{{ errStringLogin }}</p>
+                        </div>
+                        <!-- <label for="user" class="label">Username</label> -->
+                        <input id="user" type="text" class="input" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted_login && fLogin.email.errors }" id="reg_email" value=""  required>
+                        <!-- <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted_login && fLogin.email.errors }" id="reg_email" value="" required /> -->
+                        <div *ngIf="submitted_login && fLogin.email.errors">
+                            <div *ngIf="fLogin.email.errors.required" class="error">Nhập tài khoản Email</div>
+                            <div *ngIf="fLogin.email.errors.email" class="error">Email không hợp lệ</div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <!-- <label for="pass" class="label">Password</label> -->
+                        <input id="pass" class="input" type="password" placeholder="Mật khẩu" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted_login && fLogin.password.errors }" required>
+                        <!-- <input class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Mật khẩu" type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted_login && fLogin.password.errors }" required /> -->
+                        <div *ngIf="submitted_login && fLogin.password.errors">
+                            <div *ngIf="fLogin.password.errors.required" class="error">Nhập mật khẩu</div>
+                        </div>
+                    </div>
+                    <!-- <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div> -->
+                    <div class="group">
+                        <input type="submit" class="button btn-login" style="color: white; font-size: 18px;" name="login" value="Đăng Nhập" (click)="login()">
+                    </div>
+                    <!-- <div class="hr"></div> -->
+                    <div class="foot-lnk">
+                        <a class="f-password" (click)="logout();">Quên mật khẩu?</a>
+                    </div>
+                    <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2">hoặc đăng nhập bằng</span>
+                    </div>
+                    <div class="text-center" style="padding-top: 40px;">
+                        <a class="loginBtn loginBtn--facebook" (click)="facebookLogin();"></a>
+                    
+                        <a class="loginBtn loginBtn--google" (click)="googleLogin();"></a>
+                    </div>
+                    
+                </div>
+                <div class="sign-up-htm" [formGroup]="registerForm">
+                    <h4 style="text-align: center;color: #27AE61;" *ngIf=" statusRegister == true ">Đăng Ký Thành Công! Vui lòng xác nhận Email của bạn!</h4>
+                        <h4 style="text-align: center;color: red;" *ngIf="errRegister != null">{{errRegister}}</h4>
+                    <div class="group">
+                        <!-- <label for="user" class="label">Username</label> -->
+                        <input id="user" type="email" class="input" placeholder="Nhập địa chỉ Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted_register && f.email.errors }" required >
+                        <!-- <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Nhập địa chỉ Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted_register && f.email.errors }" required /> -->
+                        <div *ngIf="submitted_register && f.email.errors">
+                            <div *ngIf="f.email.errors.required" class="error">Nhập tài khoản Email</div>
+                            <div *ngIf="f.email.errors.email" class="error">Email không hợp lệ</div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <!-- <label for="pass" class="label">Password</label> -->
+                        <input id="pass" type="text" class="input" placeholder="Tên đầy đủ" formControlName="username" [ngClass]="{ 'is-invalid': submitted_register && f.username.errors }" required  >
+                        <!-- <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Tên đầy đủ" formControlName="username" [ngClass]="{ 'is-invalid': submitted_register && f.username.errors }" required /> -->
+                        <div *ngIf="submitted_register && f.username.errors">
+                            <div *ngIf="f.username.errors.required" class="error">Nhập tên đầy đủ</div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <!-- <label for="pass" class="label">Repeat Password</label> -->
+                        <input id="pass" type="password" class="input" data-type="password" placeholder="Mật khẩu" formControlName="password" [ngClass]="{ 'is-invalid': submitted_register && f.password.errors }" required >
+                        <!-- <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Mật khẩu" formControlName="password" [ngClass]="{ 'is-invalid': submitted_register && f.password.errors }" required /> -->
+                        <div *ngIf="submitted_register && f.password.errors">
+                            <div *ngIf="f.password.errors.required" class="error">Nhập mật khẩu</div>
+                            <div *ngIf="f.password.errors.pattern" class="error">Mật khẩu phải bao gồm ký tự viết hoa, thường, số và ký tự đặc biệt </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <!-- <label for="pass" class="label">Email Address</label> -->
+                        <input id="pass" type="password" class="input" placeholder="Xác Nhận Mật Khẩu" formControlName="cpass" [ngClass]="{ 'is-invalid': submitted_register && f.cpass.errors }">
+                        <!-- <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" placeholder="Xác Nhận Mật Khẩu" formControlName="cpass" [ngClass]="{ 'is-invalid': submitted_register && f.cpass.errors }" /> -->
+                        <div *ngIf="submitted_register && f.cpass.errors">
+                            <div *ngIf="f.cpass.errors.required" class="error">Nhập xác nhận mật khẩu</div>
+                            <div *ngIf="f.cpass.errors.mustMatch" class="error">Mật khẩu không trùng khớp</div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button btn-register" value="Đăng ký" name="register" value="Đăng Ký" (click)="register();">
+                    </div>
+                    
+                    <div class="foot-lnk">
+                        <label for="tab-1">Already Member?</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+        <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i class="fa fa-arrow-up"></i></button>
+    </div>
+    <!-- Back to Top -->
+</body>
+
+
+<!------ Include the above in your HEAD tag ---------->
+

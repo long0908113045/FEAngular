@@ -1,0 +1,587 @@
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+    
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+    
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        line-height: 30px;
+    }
+    
+    .read-more {
+        color: #27ae61 !important;
+    }
+    
+    .read-more:hover {
+        color: #229955 !important;
+    }
+    
+    .btn-link:after {
+        background: #229955 !important;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: Roboto Slab;
+    }
+    
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+    
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+    
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+    
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+    
+    .topbar i {
+        color: #27ae61;
+    }
+    
+    .header {
+        background-color: #ffffff;
+    }
+    
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+    
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+    
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+    
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+    
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+    
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+    
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+    
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+    
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #27ae61;
+        color: #ffffff;
+        font-family: Roboto Slab;
+        font-size: 13px;
+    }
+    
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+    
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+    
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+    
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+    
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+    
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+    
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+    
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+    
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+    
+    .product-header {
+        background: url(../../assets/img/01/title.jpg);
+        background-color: #e5e5e5;
+    }
+    
+    .page-header {
+        background: url(../../assets/img/02/Bookshelf-1200.jpg);
+        background-color: #555555;
+    }
+    
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+    
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+    
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: #229955 !important;
+        color: #ffffff !important;
+    }
+    
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+    
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #27ae61;
+    }
+    
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+    
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+    
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+    
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+    
+    .bks-post-slider .post-grid .post-content .post-date:after {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #27ae61 rgba(0, 0, 0, 0);
+    }
+    
+    .woocommerce .woocommerce-info:before,
+    .single .post-meta .author a,
+    .woocommerce .woocommerce-message:before,
+    .read-more,
+    .bks-product-list-wrap .bks-products-list-container li .product-content .amount,
+    .slick-dots li.slick-active button:before,
+    .product-wrap span.price {
+        color: #27ae61!important;
+    }
+    
+    ul.post-categories li a:after {
+        border-right-color: #27ae61;
+    }
+    
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: #27ae61 !important;
+        border: 2px solid #27ae61 !important;
+        color: #ffffff !important;
+    }
+    
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop,
+        .vc-mm-menu-v .vc-nav-on-desktop,
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-mm-mega-cont {}
+    }
+    
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop>li:hover>a,
+        .vc-mm-menu-v .vc-nav-on-desktop>li:hover>a {
+            background-color: #229955 !important;
+            color: #ffffff !important;
+        }
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-h .vc-mm-child-title,
+        .vc-mm-menu-v .vc-mm-child-title {
+            border-color: #229955 !important;
+        }
+    }
+    
+    .read-more:hover {
+        color: #229955;
+    }
+    
+    .woocommerce div.product .woocommerce-tabs ul.tabs li {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+    
+    .bks-cart-widget .minicart-button {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-left: 0px;
+    }
+    
+    .bks-promo {
+        background-color: #B7A930;
+    }
+    
+    body .social-links li a .social-icon {
+        background: #24a9e2;
+        color: #ffffff;
+    }
+    
+    body .social-links li a .social-icon:hover,
+    body .social-links li a .social-icon:focus {
+        background: #1e73be;
+        color: #ffffff;
+    }
+    
+    body .social-links li .social-icon,
+    .social-icon:after {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    }
+</style>
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">
+    .vc_custom_1454662051521 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    .vc_custom_1454597513538 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    .vc_custom_1454683539961 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 3px !important;
+        margin-left: 0px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        background-color: #27ae61 !important;
+    }
+    
+    .vc_custom_1454754526304 {
+        padding-top: 60px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    .vc_custom_1454685996679 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background: #424242 url(../../assets/img/01/ada9a09acea936d776a6f55c82778c43_XLf41b.jpg?id=10) !important;
+    }
+    
+    .vc_custom_1454679052819 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .vc_custom_1454597724991 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background-color: #f5f5f5 !important;
+    }
+    
+    .vc_custom_1456470598040 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 30px !important;
+        padding-right: 30px !important;
+        padding-bottom: 30px !important;
+        padding-left: 30px !important;
+        background-color: #27ae61 !important;
+    }
+    
+    .vc_custom_1454686431101 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    
+    .vc_custom_1454686645519 {
+        margin-top: 30px !important;
+        border-bottom-width: 30px !important;
+    }
+    
+    .vc_custom_1454829417282 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+    
+    .vc_custom_1454830425190 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-right: 150px !important;
+    }
+    
+    .vc_custom_1454830469549 {
+        padding-top: 30px !important;
+        padding-left: 90px !important;
+    }
+</style>
+               
+             
+         <!-- //MAIN NAVIGATION -->
+         <div class="product-header bks-breadcrumb">
+            <div class="container">
+                <h1>Cửa Hàng</h1>
+                <ul class="breadcrumb clearfix">
+
+                </ul>
+            </div>
+        </div>
+        <br>
+<div id="content" role="main">
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1455099464103">
+                <div class="page-container"><div class="wpb_column vc_column_container vc_col-sm-6">
+                    <div class="vc_column-inner "><div class="wpb_wrapper"><div class="wpb_images_carousel 
+                        wpb_content_element vc_clearfix">
+	<div class="wpb_wrapper">
+        <owl-carousel-o [options]="{items: 1, navSpeed: 700}">
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="../../assets/img/02/about1-538x326.jpg">
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="../../assets/img/02/about2-538x326.jpg">
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="../../assets/img/02/about3-538x326.jpg">
+                </div>
+            </ng-template>
+        </owl-carousel-o>  
+	</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_separator wpb_content_element vc_separator_align_left vc_sep_width_100 vc_sep_pos_align_center vc_sep_color_grey title-medium caps bold vc_separator-has-text"><span class="vc_sep_holder vc_sep_holder_l"><span  class="vc_sep_line"></span></span><h4>FEW WORDS ABOUT US</h4><span class="vc_sep_holder vc_sep_holder_r"><span  class="vc_sep_line"></span></span>
+</div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p>Etiam facilisis iaculis rutrum. Quisque id volutpat urna. Maecenas placerat pellentesque lectus vel volutpat? Morbi ultrices scelerisque lorem non accumsan. Curabitur vulputate ornare sem a cursus. Praesent dolor nunc, feugiat sed euismod semper, pulvinar a leo. Ut ut sem odio. Nullam vel ullamcorper mauris.</p>
+
+		</div>
+	</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<blockquote><p>
+Our mission is providing highest quality web solutions at affordable prices, with fast delivery and excellent customer service.
+</p></blockquote>
+
+		</div>
+	</div>
+</div></div></div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1455104084735 vc_row-has-fill"><div class="page-container"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_separator wpb_content_element vc_separator_align_left vc_sep_width_100 vc_sep_pos_align_center vc_sep_color_grey title-medium caps bold vc_separator-has-text"><span class="vc_sep_holder vc_sep_holder_l"><span  class="vc_sep_line"></span></span><h4>Meet Our Great Authors</h4><span class="vc_sep_holder vc_sep_holder_r"><span  class="vc_sep_line"></span></span>
+</div>
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. now use Lorem Ipsum as their, making it Many desktop leo.</p>
+
+		</div>
+	</div>
+<div class="vc_btn3-container vc_btn3-left"><button class="vc_general vc_btn3 vc_btn3-size-sm vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-success">JOIN WITH OUR TEAM</button></div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner vc_custom_1455111374334"><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1455172080307">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="../wp-content/uploads/2016/02/team-1-270x282.jpg" width="270" height="282" alt="team-1" title="team-1" /></div>
+		</figure>
+	</div>
+<div style="text-align: center" class="vc_custom_heading vc_custom_1456236817450">John Doe</div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1455172112254">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="../wp-content/uploads/2016/02/team-4-270x282.jpg" width="270" height="282" alt="team-4" title="team-4" /></div>
+		</figure>
+	</div>
+<div style="text-align: center" class="vc_custom_heading vc_custom_1456236817450">John Doe</div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_single_image wpb_content_element vc_align_left  vc_custom_1455172151356">
+		
+		<figure class="wpb_wrapper vc_figure">
+			<div class="vc_single_image-wrapper   vc_box_border_grey"><img class="vc_single_image-img " src="../wp-content/uploads/2016/02/team-3-270x282.jpg" width="270" height="282" alt="team-3" title="team-3" /></div>
+		</figure>
+	</div>
+<div style="text-align: center" class="vc_custom_heading vc_custom_1456236817450">John Doe</div></div></div></div></div></div></div></div></div></div>
+
+    			
+</div>
+<!-- Back to Top -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+      <button class="btn btn-primary" title="Back to Top"><i class="fa fa-arrow-up"></i></button>
+    </div>
+<!-- Back to Top -->
+
+<div class="vc_row wpb_row vc_row-fluid bks-promo">
+    <div class="page-container">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner ">
+                <div class="wpb_wrapper">
+                    <div class="bks-promo-content col-md-8 col-md-offset-2">
+                        <h3>Join 100,321 Happy readers And Get Access To Our Entire Collection Of 1000 ebooks For The Price Of One</h3>
+<p style="text-align: center;font-size: 18px"><em><span style="color: #ffffff;border-top: 1px solid #ffffff;border-bottom: 1px solid #ffffff;padding: 7px 0">We offer a 45 Day Money Back Guarantee, so joining is risk-free!</span></em></p>
+<div class="vc_btn3-container vc_btn3-center"><a style="border-color:#ffffff;color:#ffffff" class="vc_general vc_btn3 vc_btn3-size-sm vc_btn3-shape-rounded vc_btn3-style-outline-custom vc_btn3-icon-right" href="#" title="" target="_self">SIGN UP TODAY <i class="vc_btn3-icon fa fa-long-arrow-right"></i></a></div>
+                    </div>
+                </div>                    
+            </div>                
+        </div>
+    </div>
+</div>
+

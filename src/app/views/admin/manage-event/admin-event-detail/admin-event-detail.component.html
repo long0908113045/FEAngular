@@ -1,0 +1,259 @@
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+</head>
+
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h3 class="card-title" style="font-size: 13px;">Thêm Thể Loại</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" class="appointment-form" style="color: #555555;">
+                                        <!-- HÌnh1 -->
+                                        <div *ngIf="IsSmallImg" class="col-md-12">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-4">
+                                                <img src="{{getLinkImgCategory}}" style="width:100%;height:140px;text-align:center">
+                                            </div>
+                                            <div class="col-md-4"></div>
+                                        </div>
+                                        <!-- HÌnh2 -->
+                                        <div *ngIf="IsAveraImg" class="col-md-12">
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-6">
+                                                <img src="{{getLinkImgCategory}}" style="width:100%;height:140px;text-align:center">
+                                            </div>
+                                            <div class="col-md-3"></div>
+                                        </div>
+                                        <!-- HÌnh3 -->
+                                        <div *ngIf="IsBigImg" class="col-md-12">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8">
+                                                <img src="{{getLinkImgCategory}}" style="width:100%;height:140px;text-align:center">
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
+
+                                        <div class="radio" style="text-align:center;">
+                                            <label style="margin-top:5px;"><input type="radio" (click)="radioImgSmall()" name="optradio" checked></label>
+                                            <label style="margin-top:5px;"><input type="radio" (click)="radioImgAvera()" name="optradio"></label>
+                                            <label style="margin-top:5px;"><input type="radio" (click)="radioImgBig()" name="optradio"></label>
+                                        </div>
+
+                                        <div class="col-sm-8" style="padding: 15px;">
+
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Tiêu Đề</label>
+                                                    <input class="form-control" type="text" disabled name="headerPromotion" #name="ngModel" [(ngModel)]="promotion.headerPromotion" placeholder="Nhập Tên Tiêu Đề" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Hình Ảnh Sự Kiện</label>
+                                                    <input class="form-control" type="text"  disabled (change)="getLinkImg($event)" name="imgPromotion" #name="ngModel" placeholder="Nhập Link Ảnh Sự Kiện" [(ngModel)]="promotion.imgPromotion" required>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Thông Tin Sự Kiện</label>
+                                                    <textarea class="form-control" rows="4" disabled name="detailPromotion" #name="ngModel" [(ngModel)]="promotion.detailPromotion" placeholder="Nhập Mô Tả Sự Kiện" required></textarea>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-sm-4" style="border-left: 2px solid #E6E6E6;height: 260px;padding: 10px;">
+
+                                            <div class="col-sm-5">
+                                                <label>Mức Giảm </label>
+                                                <div class="id_100" style="padding-bottom: 10px;">
+                                                    <select class="form-control" disabled class="custom-select" name="discount" #name="ngModel" [(ngModel)]="promotion.discount" required style="padding-left: 10px;height: 36px;font-size: 14px;">
+                                                    <!-- <option ></option> -->
+                      
+                                                    <option value=5>5%</option>
+                                                    <option value=10>10%</option>
+                                                    <option value=15>15%</option>
+                                                    <option value=20>20%</option>
+                                                    <option value=25>25%</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <label>Điều Kiện Giảm</label>
+                                                <div class="id_200" style="padding-bottom: 10px;">
+                                                    <select *ngIf="!promotion.addList" class="form-control" class="custom-select" name="ifDiscount" #name="ngModel" [(ngModel)]="promotion.ifDiscount" required style="padding-left: 10px;height: 36px;font-size: 14px;">
+                                                    <!-- <option ></option> -->
+                      
+                                                    <option value=100000>100.000 VNĐ</option>
+                                                    <option value=200000>200.000 VNĐ</option>
+                                                    <option value=300000>300.000 VNĐ</option>
+                                                    <option value=500000>500.000 VNĐ</option>
+                                                    <option value=1000000>1.000.000 VNĐ</option>
+                                                  </select>
+                                                    <select *ngIf="promotion.addList" class="form-control" class="custom-select" disabled name="ifDiscount" #name="ngModel" [(ngModel)]="promotion.ifDiscount" required style="padding-left: 10px;height: 36px;font-size: 14px;">
+                                                    <!-- <option ></option> -->
+                      
+                                                    <option value=100000>100.000 VNĐ</option>
+                                                    <option value=200000>200.000 VNĐ</option>
+                                                    <option value=300000>300.000 VNĐ</option>
+                                                    <option value=500000>500.000 VNĐ</option>
+                                                    <option value=1000000>1.000.000 VNĐ</option>
+                                                  </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label>Ngày Bắt Đầu</label>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input class="form-control" disabled type="time" id="timeStart" name="eta" value="{{minTimeStart}}"(input)="timeStart($event)">
+                                            </div>
+                                            <div class="col-sm-7">
+
+                                                <input class="form-control" disabled type="date" id="dateStart" name="trip-start"   value="{{mindateStart}}" (input)="dateStart($event)">
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label>Ngày Kết Thúc</label>
+                                            </div>
+
+                                            <div class="col-sm-5">
+                                                <input class="form-control" disabled type="time" id="timeEnd" name="eta" value="{{minTimeEnd}}" (input)="timeEnd($event)">
+                                            </div>
+                                            <div class="col-sm-7">
+
+                                                <input class="form-control" disabled type="date" id="dateEnd" name="trip-start" value="{{mindateEnd}}" min="{{mindateEnd}}" (input)="dateEnd($event)">
+                                            </div>
+                                            <div class="col-sm-12" style="margin-top:10px">
+                                                <input *ngIf="!promotion.addList" style="padding:10px;" disabled type="checkbox" class="form-check-input" id="exampleCheck1" name="isShow" #name="ngModel" [(ngModel)]="promotion.isShow">
+
+                                                <input *ngIf="promotion.addList" style="padding:10px;" disabled type="checkbox" class="form-check-input" id="exampleCheck1" name="isShow" #name="ngModel" [(ngModel)]="promotion.isShow">
+                                                <label class="form-check-label" for="exampleCheck1"> &nbsp;
+                                                    <span  *ngIf="!promotion.addList">
+                                                        Cho Phép Hiển Thị Tại Trang Bán Hàng
+                                                    </span>
+                                                    <span  *ngIf="promotion.addList" style="color: #AAAAAA;">
+                                                        Cho Phép Hiển Thị Tại Trang Bán Hàng
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-12" style="margin-top:10px">
+                                                <input style="padding:10px;" type="checkbox" disabled class="form-check-input" id="exampleCheck2" name="addList" #name="ngModel" [(ngModel)]="promotion.addList">
+                                                <label class="form-check-label" for="exampleCheck2"> &nbsp; Tạo Danh Sách Sách Giảm Giá</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12" style="padding: 10px;" *ngIf="promotion.addList">
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+                                                    <label>Danh Sách ID Sách Được Áp Dụng Trong Sự Kiện
+                                                        <b *ngIf="IscheckListID==2" style="cursor: pointer;margin-left: 20px;"data-toggle="modal"data-target="#TrueListBookID"> Kiểm tra</b>
+                                                         <b *ngIf="IscheckListID==1" style="cursor: pointer;margin-left: 20px;"data-toggle="modal"data-target="#FalseListBookID"> Kiểm tra</b>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12" style="padding: 10px;" *ngIf="promotion.addList">
+                                            <div class="row" style="padding-bottom: 10px;">
+                                                <div class="input-field col s12" style="padding: 0px;">
+
+                                                    <textarea disabled class="form-control" rows="4" id="inputList" name="listBookIn"
+                                                     #name="ngModel" [(ngModel)]="promotion.listBookIn" 
+                                                     placeholder="ID1,ID2,ID3...." (input)="checkListID($event)" required></textarea>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="float: right;"> &nbsp;
+                                            <div class="input-field col s12">
+
+                                                <button class="btn btn-primary" type="submit"  (click)="gotoUpdate()" style="border-radius: 30px ; width: 180px;height: 50px;font-size: 13px;">Chỉnh Sửa</button>
+                                                <button class="btn btn-warring" type="button" (click)="cancel()" style="border-radius: 30px; width: 180px;height: 50px;font-size: 13px;">Trở Về</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+    <!--  message alert -->
+    <div *ngIf="alertSucess" name="alertSucess" class="alert alert-success" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;z-index: 1000001;font-size: 14px;">
+        {{alertMessage}}
+    </div>
+    <div *ngIf="alertFalse" name="alertFalse" class="alert alert-danger" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;z-index: 1000001;font-size: 14px;  ">
+        {{alertMessage}}
+    </div>
+    <!--  message alert -->
+    <div class="modal fade" id="FalseListBookID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1000000;width:600px;margin:auto">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h2><b>Danh sách những bookID bạn nhập không tồn tại</b></h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body " style="max-height: 400px;  overflow: auto">
+                    <h3 *ngFor="let index of dataFalse ">{{index}}</h3>
+
+                    <button type="button" class="btn btn-danger" (click)="DeleteFalseBookID()"><span style="font-size: 14px;">Xóa Những BookID Không Tồn Tại</span></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="TrueListBookID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe2" aria-hidden="true" style="z-index: 1000000;">
+        <div class=" modal-dialog modal-lg modal-dialog-centered " role="document ">
+            <div class="modal-content ">
+                <div class="modal-header border-bottom-0 ">
+                    <h2><b>Danh sách những bookID</b></h2>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body " style="max-height: 400px; overflow: auto " *ngIf="IscheckListID==2">
+                    <div class="row" *ngFor="let index of arrayListBook">
+                        <div class="col-sm-4 ">
+                            <h3>{{index._id}}</h3>
+                        </div>
+                        <div class="col-sm-5 ">
+                            <h3>{{index.nameBook}}</h3>
+                        </div>
+                        <div class="col-sm-1 ">
+                            <img style="border:0px " src={{index.imgBook}} width="50px " height="50px " alt=" " />
+                        </div>
+                        <!-- <div class="col-sm-1 ">
+                            <button type="button" class="btn btn-danger" style="width:20px"><span style="font-size: 14px;">X</span></button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

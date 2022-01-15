@@ -1,0 +1,226 @@
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    .product-header {
+        background: url(../wp-content/uploads/2016/01/title.jpg);
+        background-color: #e5e5e5;
+    }
+    
+    .page-header {
+        background: url(../../../../assets/wp-content/uploads/2016/01/title.jpg);
+        background-color: #555555;
+    }
+    
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+    
+    .read-more:hover {
+        color: #229955;
+    }
+</style>
+
+<body class="page page-id-7 page-template-default woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd">
+    <div class="wrapper" style="font-family: 'Montserrat', sans-serif !important;">
+        <!-- //MAIN NAVIGATION -->
+        <!-- <div class="page-header bks-breadcrumb">
+            <div class="container">
+                <h1>Giỏ Hàng</h1>
+            </div>
+        </div> -->
+
+        <br>
+
+        <div id="page-content" role="main">
+
+            <div class="container mb-4">
+                <div *ngIf="checkViewCart" style="padding-bottom: 20px;">
+                    <div style="background-color: #EEE;height:60px;width: 100%;text-align: center;">
+                        <b style="top:15px;position: relative;">Giỏ hàng của bạn đang trống </b></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngIf="!checkViewCart">
+                            <div class="table-responsive">
+                                <table class="table table-striped" style="color: black;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> </th>
+                                            <th scope="col">Tên Sách</th>
+                                            <th></th>
+                                            <th scope="col" style="padding-left: 40px;">Đơn Giá</th>
+                                            <th scope="col" class="text-center">Số Lượng</th>
+                                            <th scope="col" class="text-right">Tổng Tiền</th>
+                                            <th> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let cartbook of CartBook">
+
+                                            <td><img src={{cartbook.imgBook}} (click)=ViewBookDetail(cartbook._id) style="cursor: pointer;" /> </td>
+                                            <td  colspan="2">{{cartbook.nameBook}}<br>
+                                                <span *ngIf="(cartbook.rate.average/0.5)%2==0">
+                                                    <span *ngFor="let i of [].constructor(5-(5-(cartbook.rate.average)))" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                                <span *ngFor="let i of [].constructor(5-(cartbook.rate.average))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                                </span>
+                                                <span *ngIf="(cartbook.rate.average/0.5)%2==1">
+                                                    <span *ngFor="let i of [].constructor(cartbook.rate.average-0.5)" class="float-right"><i class="text-warning fas fa-star"></i></span>
+                                                <span *ngFor="let i of [].constructor((cartbook.rate.average/0.5)%2)" class="float-right"><i class="text-warning fa fa-star-half-alt"></i></span>
+                                                <span *ngFor="let i of [].constructor(5-(cartbook.rate.average-0.5+1))" class="float-right"><i class="text-warning far fa-star"></i></span>
+                                                </span><br>
+                                                <b  *ngIf="cartbook.quantity < cartbook.count && cartbook.quantity>=0" style="color: red;font-size: 10px;">(Còn {{cartbook.quantity}} Cuốn Sách Tại Cửa Hàng)<br>Vui lòng giảm số lượng sách bạn muốn mua</b>
+                                                <b *ngIf="cartbook.quantity >= cartbook.count" style="font-size: 10px;">(Còn {{cartbook.quantity}} Cuốn Sách Tại Cửa Hàng)</b>
+                                            </td>
+                                            <!-- Sale -->
+                                            <td  *ngIf="cartbook.sale!=0" style="padding-left: 40px;">{{cartbook.priceBook*(100-cartbook.sale)/100|currency:"VND"}}
+                                                <br>
+                                                <span style="font-size: 12px;">
+                                                    <span style="text-decoration: line-through;color:darkgrey;">
+                                                        {{cartbook.priceBook|currency:"VND"}}
+                                                    </span><b style="color:red;"> | -{{cartbook.sale}}%</b>
+                                                </span>
+                                            </td>
+                                            <!-- don't Sale -->
+                                            <td *ngIf="cartbook.sale==0" style="padding-left: 40px;">{{cartbook.priceBook|currency:"VND"}}
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <div class="input-group-btn">
+                                                        <button id="down" (click)="minus(cartbook._id);" class="btn btn-default"><span class="glyphicon glyphicon-minus"></span></button>
+                                                    </div>
+                                                    <input class="form-control" min="1" max="10" value="1" id="number" value="{{cartbook.count}}" (change)="getCountUpdate($event,cartbook._id)" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                                        style="text-align: center;" />
+                                                        
+                                                    <div class="input-group-btn">
+                                                        <button id="up" (click)="plus(cartbook._id);" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td *ngIf="cartbook.sale!=0" class="text-right">{{cartbook.priceBook*(100-cartbook.sale)/100*cartbook.count|currency:"VND"}}</td>
+                                            <td *ngIf="cartbook.sale==0" class="text-right">{{cartbook.priceBook*cartbook.count|currency:"VND"}}</td>
+                                            <td class="text-center"><button class="btn btn-sm btn-danger" type="button" (click)="deleteCartBook(cartbook._id)"><i class="fa fa-trash"></i></button> </td>
+                                            <!-- <td><button class="btn btn-sm btn-info" type="button" (click)="updateCartBook(cartbook._id)"><i class="fa fa-edit"></i> 
+                                </button> </td> -->
+
+                                        </tr>
+                                        <tr *ngIf="this.promotionDiscount[2]!=0">
+                                            <td></td>
+                                            <td colspan="3"><b style="color:#ff6348;padding-top:5px;position:absolute;">Áp Dụng Khuyến Mãi {{promotionDiscount[2]}}% Cho Đơn Hàng Trên {{promotionDiscount[3]|currency:"VND"}}</b></td>
+                                            <td colspan="3"> 
+                                                <div class="progress" style="margin-bottom: 0px;height:30px">
+                                                    <div  id="processBar" class="progress-bar " role="progressbar"  aria-valuenow="40"
+                                                    aria-valuemin="0" aria-valuemax="100"  style="width:40%"  style="background-color:#008080 !important;">
+                                                      
+                                                    </div>
+                                                </div>
+                                                <b style="position: relative;top: -25px;left: 180px;color: #dfe6e9;">
+                                                    {{TongTien|currency:"VND"}} / {{promotionDiscount[3]|currency:"VND"}}</b>
+                                            </td>   
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Tổng Tiền</td>
+                                            <td class="text-right">{{TongTien|currency:"VND"}}</td>
+                                        </tr>
+                                        <tr *ngIf="this.promotionDiscount[2]!=0">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="padding-top: 14px;">
+                                               Giảm {{promotionDiscount[0]}}% Sự Kiện 
+                                            </td>
+                                            <td class="text-right" style="padding-top: 14px;">
+                                                -&ensp;{{TongTien*promotionDiscount[0]/100|currency:"VND"}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <button *ngIf="discountCode.discountCode ==0" class="btn btn-sm btn-info" style="float: right;" type="button" (click)="goToDiscountCode()">Dùng Mã <i class="fas fa-clipboard-list"></i> 
+                                                </button>
+                                                <button *ngIf="discountCode.discountCode !=0" class="btn btn-sm btn-danger" style="float: right;" type="button" (click)="unUseDiscountCode()">Hủy Mã <i class="fas fa-clipboard-list"></i> 
+                                                </button>
+                                            </td>
+                                            <td style="padding-top: 14px;">Giảm {{discountCode.discountCode}}%</td>
+                                            <td class="text-right" style="padding-top: 14px;">-&ensp;{{TongTien*discountCode.discountCode/100|currency:"VND"}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><strong>Số Tiền Phải Trả</strong></td>
+                                            <td class="text-right">{{TongTien*(100-discountCode.discountCode)/100|currency:"VND"}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                               
+                            </div>
+                        </div>
+                
+                        <div class="col mb-2">
+                            <div class="row">
+                                <div class="col-sm-12  col-md-6">
+                                    <button id="continue" class="btn btn-block btn-light " style="padding: 10px 16px;" (click)="goToHome()">Tiếp tục mua hàng</button>
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-right">
+                                    <button *ngIf="checkViewCart" class="btn btn-lg btn-block btn-success text-uppercase" type="button" (click)="checkoutWhenNull()">Tiến hành đặt hàng</button>
+                                    <button *ngIf="!checkViewCart" class="btn btn-lg btn-block btn-success text-uppercase" type="button" (click)="goToShipping()">Tiến hành đặt hàng</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- #content -->
+
+
+        <!-- Back to Top -->
+        <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+            <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i class="fa fa-arrow-up"></i></button>
+        </div>
+        <!-- Back to Top -->
+    </div>
+
+    <div *ngIf="alertSucess" name="alertSucess" class="alert alert-success" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;">
+        {{alertMessage}}
+    </div>
+    <div *ngIf="alertFalse" name="alertFalse" class="alert alert-danger" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;">
+        {{alertMessage}}
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

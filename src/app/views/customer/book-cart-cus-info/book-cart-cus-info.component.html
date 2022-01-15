@@ -1,0 +1,593 @@
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+
+<meta charset="UTF-8" />
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+
+
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .read-more {
+        color: #27ae61 !important;
+    }
+
+    .read-more:hover {
+        color: #229955 !important;
+    }
+
+    .btn-link:after {
+        background: #229955 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+
+    .topbar i {
+        color: #27ae61;
+    }
+
+    .header {
+        background-color: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #27ae61;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .product-header {
+        background: url(../wp-content/uploads/2016/01/title.jpg);
+        background-color: #e5e5e5;
+    }
+
+    .page-header {
+        background-color: white;
+    }
+
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: #229955 !important;
+        color: #ffffff !important;
+    }
+
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #27ae61;
+    }
+
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+
+    .bks-post-slider .post-grid .post-content .post-date:after {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #27ae61 rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .woocommerce-info:before,
+    .single .post-meta .author a,
+    .woocommerce .woocommerce-message:before,
+    .read-more,
+    .bks-product-list-wrap .bks-products-list-container li .product-content .amount,
+    .slick-dots li.slick-active button:before,
+    .product-wrap span.price {
+        color: #27ae61 !important;
+    }
+
+    ul.post-categories li a:after {
+        border-right-color: #27ae61;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: #27ae61 !important;
+        border: 2px solid #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop,
+        .vc-mm-menu-v .vc-nav-on-desktop,
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-mm-mega-cont {}
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop>li:hover>a,
+        .vc-mm-menu-v .vc-nav-on-desktop>li:hover>a {
+            background-color: #229955 !important;
+            color: #ffffff !important;
+        }
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-h .vc-mm-child-title,
+        .vc-mm-menu-v .vc-mm-child-title {
+            border-color: #229955 !important;
+        }
+    }
+
+    .read-more:hover {
+        color: #229955;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+
+    .bks-cart-widget .minicart-button {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-left: 0px;
+    }
+
+    .bks-promo {
+        background-color: #B7A930;
+    }
+    /* body .social-links li a .social-icon {
+        background: #24a9e2;
+        color: #ffffff;
+    }
+
+    body .social-links li a .social-icon:hover,
+    body .social-links li a .social-icon:focus {
+        background: #1e73be;
+        color: #ffffff;
+    }
+
+    body .social-links li .social-icon,
+    .social-icon:after {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    } */
+</style>
+
+<body class="page page-id-7 page-template-default woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd">
+    <div class="wrapper">
+
+
+
+        <!-- //MAIN NAVIGATION -->
+        <div class="page-header bks-breadcrumb" style="background-color: white;">
+            <div class="container">
+                <!-- <h1>Shipping</h1> -->
+                <div class="wrap">
+                    <ul class="list">
+                        <li *ngIf="isLoggedIn" class="active">1</li>
+                        <li *ngIf="isLoggedIn" class="active">2</li>
+                        <li *ngIf="!isLoggedIn">1</li>
+                        <li *ngIf="!isLoggedIn">2</li>
+                        <li *ngIf="isLoggedIn || !isLoggedIn">3</li>
+
+                    </ul>
+
+                </div>
+                <div class="row" style="margin-left:320px;">
+                    <!-- <li class="active"><i class="fas fa-file-alt"></i><p style = "font-size: 10px;">file</p></li>
+                    <li class="active"><i class="fas fa-archive"></i><p style = "font-size: 10px;">file</p></li>
+                    <li><i class="fas fa-truck"></i><p style = "font-size: 10px;">file</p></li>
+                   <li><i class="fas fa-check-circle"></i><p style = "font-size: 10px;">file</p></li> -->
+                    <div class="col-sm-3">Đăng Nhập</div>
+                    <div class="col-sm-3">Địa Chỉ Giao Hàng</div>
+                    <div class="col-sm-3">Thanh Toán & Đặt Mua</div>
+                </div>
+                <!-- partial -->
+            </div>
+        </div>
+
+        <br>
+        <div id="page-content" role="main">
+
+            <div class="container mb-4">
+
+                <h5><b>2. Địa chỉ giao hàng</b></h5>
+                <p>Chọn địa chỉ giao hàng có sẵn bên dưới:</p>
+                <div class="row" id="infoAddress">
+                    <div id="GGMap" class="col-sm-6">
+
+
+                        <div style="margin-top: 10px;">
+                            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                                <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)"></agm-marker>
+                                <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+                            </agm-map>
+                        </div>
+                        <h5>Địa Chỉ Cửa Hàng: Số 1 Võ Văn Ngân, Linh Chiểu, Thủ Đức, Hồ Chí Minh, Việt Nam</h5>
+                        <h5>Địa Chỉ Giao Hàng: {{address}}</h5>
+                        <h5>Khoảng cách: {{distanceShow/1000}}Km ==> Phí Ship: {{feeShip|currency:"VND"}}</h5>
+                    </div>
+
+                    <div class="col-sm-6"  id="formLocation">
+                        <div  style="float: center;">
+                            <div class="table-responsive" style="overflow-x:hidden;margin-top:10px;">
+                                <table class="table table-striped" style="color: black;">
+
+                                    <tr>
+                                        <td>Email</td>
+                                        <td><input type="text" name="Email" (change)="editEmail($event)" value={{email}} style="width:410px;height: 35px;">
+                                            <span *ngIf="!CheckEmail" style="color: red;">{{statusEmailFailed}}</span>
+                                            
+                                        </td>
+                                        <span *ngIf="CheckEmail" class="glyphicon glyphicon-ok" style="color: #00a8ff;"></span>
+                                    </tr>
+                                    <tr>
+                                        <td>Họ tên</td>
+                                        <td><input type="text" name="Name" (change)="editUserName($event)" value={{username}} style="width:410px;height: 35px;">
+                                            
+                                        </td>
+                                        <span *ngIf="CheckUserName" class="glyphicon glyphicon-ok" style="color: #00a8ff;"></span>
+                                    </tr>
+                                    <tr>
+                                        <td>Điện thoại </td>
+                                        <td><input type="text" name="Phone" (input)="editPhone($event)" value={{phone}} style="width:410px;height: 35px;" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">  
+                                        </td>
+                                        <span *ngIf="CheckPhone" class="glyphicon glyphicon-ok" style="color: #00a8ff;"></span>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Địa chỉ</td>
+                                        <td style="width:310px;">
+                                            
+                                            <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Tìm kiếm địa chỉ" autocorrect="off" autocapitalize="off" spellcheck="off" style="width:410px;height: 35px;" type="text" #search value={{address}} (input)="editAddress($event)">
+                                            
+                                        </td>
+                                        <span *ngIf="CheckAddress" class="glyphicon glyphicon-ok" style="color: #00a8ff;"></span>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td> <i style="font-size: 12px;">Để nhận hàng thuận tiện hơn, bạn vui lòng cho biết loại địa chỉ.</i></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Loại địa chỉ</td>
+                                        <td style="font-size: 14px;">
+                                            <label *ngIf="typeAddress=='Nhà riêng'" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio"  (change)="editTypeAddress()" checked>Nhà riêng / Chung cư</label>
+                                            <label *ngIf="typeAddress=='Nhà riêng'" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio" (change)="editTypeAddress2()">Cơ quan / Công ty</label>
+                                            <label *ngIf="typeAddress=='Cơ quan'" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio" (change)="editTypeAddress()">Nhà riêng / Chung cư </label>
+                                            <label *ngIf="typeAddress=='Cơ quan'" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio" (change)="editTypeAddress2()" checked>Cơ quan / Công
+                                        ty</label>
+                                            <label *ngIf="typeAddress==''" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio" (change)="editTypeAddress()">Nhà riêng / Chung cư </label>
+                                            <label *ngIf="typeAddress==''" style="font-size: 13px;" class="radio-inline"><input type="radio"
+                                            name="optradio" (change)="editTypeAddress2()">Cơ quan / Công ty</label>
+                                            <span *ngIf="CheckTypeAddress" class="glyphicon glyphicon-ok" style="color: #00a8ff;"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td style="font-size: 13px ;"><input  type="checkbox">Sử dụng địa chỉ này làm mặc định</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="col mb-2">
+                                                <div class="row">
+                                                    <div class="col-sm-12  col-md-6" id="btnHuyBo">
+                                                        <button class="btn btn-block" style="padding: 10px 16px;" (click)="CloseForm()">Hủy bỏ</button>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6 text-right">
+                                                        <button *ngIf="!IsUpdateCustomer" class="btn btn-lg btn-block btn-success text-uppercase" style="width: 215px" type="button" (click)="postCustomer()">Giao đến địa chỉ này</button>
+                                                        <button *ngIf="IsUpdateCustomer" class="btn btn-lg btn-block btn-success text-uppercase" type="button" (click)="putCustomer(customer_id)">Cập nhật</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6" *ngFor="let customer of allCustomer" style="padding: 10px;">
+                        <div style="border-style: dotted ;border-width:2px; padding :10px;height: 310px;">
+                            <b style="margin:0px;">{{customer.name}}</b>
+                            <p style="margin:0px;height: 60px;">Địa chỉ: {{customer.address}}</p>
+                            <p style="margin:0px;">Điện thoại: {{customer.phone}}</p>
+                            <p style="margin:0px;">Email: {{customer.email}}</p>
+                            <p style="margin:0px;">Vị trí cửa hàng: {{ addressStore }}</p>
+                            <p style="margin:0px;">Phí Ship: <b >{{ customer.feeShip | currency:'VND' }}</b> </p>
+                            <div class="row" style="padding-top: 10px;">
+                                <div class="col-sm-12 col-md-5 ">
+                                    <button class="btn btn-lg btn-block btn-success text-uppercase" type="button" (click)="moveToPayment(customer)">Giao đến địa chỉ này</button>
+                                </div>
+                                <div class="col-sm-12  col-md-2" id="addScrollUpdate">
+                                    <button class="btn btn-block" style="padding: 9px 9px;margin-left: -20px;" (click)="ClickEditCustomer(customer)">Sửa</button>
+                                </div>
+                                <div class="col-sm-12  col-md-2">
+                                    <button class="btn btn-block" style="padding: 9px 9px;margin-left: -40px;" (click)="ClickDeleteCustomer(customer._id)">Xóa</button>
+                                </div>
+                                <div class="col-sm-12  col-md-2">
+                                    <button class="btn btn-success" style="padding: 9px 9px;margin-left: -60px;" (click)="setCurrentLocation2(customer)">Địa chỉ hiện tại</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p>Bạn muốn giao hàng đến địa chỉ khác?<a style="color: cornflowerblue;font-weight: bold;cursor: pointer;" (click)="ClickAddCustomer()" id="addScroll2">Thêm địa chỉ giao hàng mới</a></p>
+                <br>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- #content -->
+
+
+    <!-- Back to Top -->
+    <div id="back-to-top" data-spy="affix" data-offset-top="300" class="back-to-top hidden-xs hidden-sm affix">
+        <button id="scrollToTopButton" class="btn btn-primary" title="Back to Top"><i
+                class="fa fa-arrow-up"></i></button>
+    </div>
+
+
+    <div *ngIf="alertSucess" name="alertSucess" class="alert alert-success" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;">
+        {{alertMessage}}
+    </div>
+    <div *ngIf="alertFalse" name="alertFalse" class="alert alert-danger" role="alert" style=" position: fixed;width: 50%;bottom: 0;left: 40px;z-index: 1;">
+        {{alertMessage}}
+    </div>
+
+
+
+</body>

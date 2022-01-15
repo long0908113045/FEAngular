@@ -1,0 +1,951 @@
+<style>
+    #yith-quick-view-modal .yith-wcqv-main {
+        background: #ffffff
+    }
+
+    #yith-quick-view-close {
+        color: #cdcdcd
+    }
+
+    #imageAccountSocial {
+        border-radius: 30px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #yith-quick-view-close:hover {
+        color: #ff0000
+    }
+</style>
+
+<style>
+    .wishlist_table .add_to_cart,
+    a.add_to_wishlist.button.alt {
+        border-radius: 16px;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+    }
+</style>
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+</style>
+
+<style id='bookstore-custom-styles-inline-css' type='text/css'>
+    body {
+        color: #666666;
+        font-family: Roboto Slab;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .read-more {
+        color: #27ae61 !important;
+    }
+
+    .read-more:hover {
+        color: #229955 !important;
+    }
+
+    .btn-link:after {
+        background: #008080 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #323232;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .topbar {
+        background-color: #F5F5F5;
+        color: #999999;
+    }
+
+    .topbar .nav>li.current_page_item a,
+    .topbar .nav>li.current-menu-item a {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a:hover {
+        color: #27ae61;
+    }
+
+    .topbar .nav>li a {
+        color: #999999;
+        border-color: #27ae61;
+    }
+
+    .topbar i {
+        color: #27ae61;
+    }
+
+    .header {
+        background-color: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-select {
+        background: #ffffff !important;
+    }
+
+    .bks-cart-widget .currency-switcher,
+    .bks-cart-widget .minicart-button {
+        border-color: #e4e4e4;
+    }
+
+    .bks-cart-widget .currency-switcher a,
+    .bks-cart-widget .minicart-button .cart-item-info a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .dd-pointer-down {
+        border-top-color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher .dd-options {
+        background: #ffffff;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover {
+        background: #27ae61;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options a {
+        color: #323232;
+    }
+
+    .bks-cart-widget .currency-switcher ul.dd-options li:hover a {
+        color: #ffffff;
+    }
+
+    .main-menu,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a {
+        background: #008080;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop>li>a:hover {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-ancestor>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-menu-parent>a,
+    .main-menu .vc-mm-menu-h>ul.vc-nav-on-desktop li.current-page-item>a {
+        color: #ffffff;
+    }
+
+    .main-menu .vc-nav-on-desktop>li:hover>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-nav-on-desktop>li.current-menu-item>a.nav-link,
+    .main-menu vc-nav-on-desktop>li.current_page_item>a.nav-link {
+        background: #229955;
+    }
+
+    .main-menu .vc-mm-mega-cont,
+    .main-menu .sub-menu,
+    .main-menu .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont-inner {
+        background-color: #ffffff !important;
+    }
+
+    .main-menu .vc-mm-mega-cont li a,
+    .sub-menu-inner li a.nav-link,
+    .vc-mm-menu a,
+    .vc-mm-menu li a {
+        color: #262626;
+    }
+
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu ul.sub-menu-inner li a:hover,
+    .main-menu .vc-mm-mega-cont li a:hover,
+    .main-menu .vc-mm-mega-cont-inner li.current-menu-parent a {
+        color: #27ae61 !important;
+    }
+
+    .main-menu .vc-mm-mega-cont ul li {
+        border-color: #e5e5e5 !important;
+    }
+
+    body.boxed-layout {
+        background-color: #e5e5e5;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+    .btn-primary,
+    #back-to-top .btn {
+        background-color: #27ae61 !important;
+        border-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    #back-to-top .btn:hover,
+    #back-to-top .btn:active,
+    #back-to-top .btn:focus {
+        background-color: #229955 !important;
+        border-color: #229955;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a,
+    .product-wrap .yith_compare_btn a,
+    .product-wrap .yith-wcwl-add-to-wishlist a,
+    .yith-wcwl-add-to-wishlist .woocommerce a.add_to_wishlist,
+    .product .single_add_to_cart_button,
+    div.product .summary .yith-wcwl-add-to-wishlist a,
+    .woocommerce div.product .summary .compare,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+    .gridlist-toggle a:hover,
+    .gridlist-toggle a.active,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .main-menu .vc-mm-h-sticky-wrapper.is-sticky .vc-transparent.vc-mm-menu-h,
+    .main-menu .vc-nav-on-mobile,
+    ul.post-categories li a,
+    .main-menu .vc-mm-mega-cont h3:hover,
+    .main-menu .vc-mm-mega-cont h4:hover,
+    .main-menu .vc-mm-mega-cont h5:hover,
+    #bks-products-slider .vc_tta.vc_general li.vc_active a {
+        background-color: #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    .product-wrap .add-to-cart-btn a:hover,
+    .woocommerce button.single_add_to_cart_button:hover,
+    .product-wrap .add-to-cart-btn a.added,
+    .product-wrap .yith_compare_btn a:hover,
+    .product-wrap .yith-wcwl-add-to-wishlist a:hover,
+    .product-wrap .yith-wcwl-wishlistaddedbrowse.show a,
+    .product-wrap .yith-wcwl-wishlistexistsbrowse.show a,
+    .product .single_add_to_cart_button:hover,
+    div.product .summary .yith-wcwl-add-to-wishlist a:hover,
+    .woocommerce div.product .summary .compare:hover,
+    .yith-wcwl-wishlistaddedbrowse.show,
+    .yith-wcwl-wishlistexistsbrowse.show,
+    .catalog-image .yith-wcqv-button {
+        background-color: #229955 !important;
+        color: #ffffff !important;
+    }
+
+    .woocommerce #content div.product div.thumbnails a:hover,
+    .woocommerce div.product div.thumbnails a:hover,
+    .woocommerce-page #content div.product div.thumbnails a:hover,
+    .woocommerce-page div.product div.thumbnails a:hover,
+    .woocommerce .woocommerce-info,
+    .product-wrap:hover,
+    .main-menu .vc-mm-mega-cont h3,
+    .main-menu .vc-mm-mega-cont h4,
+    .main-menu .vc-mm-mega-cont h5,
+    .woocommerce .woocommerce-message,
+    .bks-product-list-wrap .bks-products-list-container li:hover,
+    .main-menu .vc-mm-mega-cont .wpb_wrapper h3 {
+        border-color: #27ae61;
+    }
+    .wpb_wrapper {
+        width: 400px !important;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+        border: 2px solid #27ae61;
+    }
+
+    #bks-products-slider .vc_tta-tabs-container ul li.vc_active:after {
+        border-color: #27ae61 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    .bks-post-slider .post-grid .post-content .post-date {
+        background-color: #27ae61 !important;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+        border: 2px solid #27ae61;
+    }
+
+    .gridlist-toggle a {
+        color: #27ae61;
+        border: 2px solid #27ae61;
+    }
+
+    .bks-post-slider .post-grid .post-content .post-date:after {
+        border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #27ae61 rgba(0, 0, 0, 0);
+    }
+
+    .woocommerce .woocommerce-info:before,
+    .single .post-meta .author a,
+    .woocommerce .woocommerce-message:before,
+    .read-more,
+    .bks-product-list-wrap .bks-products-list-container li .product-content .amount,
+    .slick-dots li.slick-active button:before,
+    .product-wrap span.price {
+        color: #27ae61!important;
+    }
+
+    ul.post-categories li a:after {
+        border-right-color: #27ae61;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: #27ae61 !important;
+        border: 2px solid #27ae61 !important;
+        color: #ffffff !important;
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop,
+        .vc-mm-menu-v .vc-nav-on-desktop,
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-mm-mega-cont,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-mm-mega-cont {}
+    }
+
+    @media only screen and (max-width:768px) {
+        .vc-mm-menu-h .vc-nav-on-desktop>li:hover>a,
+        .vc-mm-menu-v .vc-nav-on-desktop>li:hover>a {
+            background-color: #229955 !important;
+            color: #ffffff !important;
+        }
+        .vc-mm-menu-h .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-v .vc-nav-on-desktop .vc-d-0>.nav-link,
+        .vc-mm-menu-h .vc-mm-child-title,
+        .vc-mm-menu-v .vc-mm-child-title {
+            border-color: #229955 !important;
+        }
+    }
+
+    .read-more:hover {
+        color: #229955;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+
+    .bks-cart-widget .minicart-button {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-left: 0px;
+    }
+
+    .bks-promo {
+        background-color: #B7A930;
+    }
+
+    body .social-links li a .social-icon {
+        background: #24a9e2;
+        color: #ffffff;
+    }
+
+    body .social-links li a .social-icon:hover,
+    body .social-links li a .social-icon:focus {
+        background: #1e73be;
+        color: #ffffff;
+    }
+
+    body .social-links li .social-icon,
+    .social-icon:after {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+
+.bks-cart-widget {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+margin-top: 10px;
+}
+
+.list_content {
+    width: 90%;
+    font-size: 12px !important;
+}
+.icon-footer {
+    font-size: 16px;
+    color: #008080;
+    margin-right: 10px;
+}
+</style>
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">
+    .vc_custom_1454662051521 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .vc_custom_1454597513538 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .vc_custom_1454683539961 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 3px !important;
+        margin-left: 0px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        background-color: #008080 !important;
+    }
+
+    .vc_custom_1454754526304 {
+        padding-top: 60px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .vc_custom_1454685996679 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background: #424242 url(../../assets/img/01/ada9a09acea936d776a6f55c82778c43_XLf41b.jpg?id=10) !important;
+    }
+
+    .vc_custom_1454679052819 {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .vc_custom_1454597724991 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        background-color: #f5f5f5 !important;
+    }
+
+    .vc_custom_1456470598040 {
+        margin-top: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        padding-top: 30px !important;
+        padding-right: 30px !important;
+        padding-bottom: 30px !important;
+        padding-left: 30px !important;
+        background-color: #008080;
+    }
+
+    .vc_custom_1454686431101 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .vc_custom_1454686645519 {
+        margin-top: 30px !important;
+        border-bottom-width: 30px !important;
+    }
+
+    .vc_custom_1454829417282 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .vc_custom_1454830425190 {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding-right: 150px !important;
+    }
+
+    .vc_custom_1454830469549 {
+        padding-top: 30px !important;
+        padding-left: 90px !important;
+    }
+</style>
+
+<body class="home page page-id-31 page-template page-template-page-blank page-template-page-blank-php wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd">
+    <div class="wrapper" >
+        <!-- TOPBAR -->
+        <div id="topbar" class="topbar" >
+            <div class="container">
+                <div class="row" style="font-family: 'Montserrat', sans-serif !important;">
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-left header-address">
+                        <i class="fa fa-map-marker"></i> Võ Văn Ngân, Thủ Đức, TP. Hồ Chí Minh <i class="fa fa-mobile">
+                        </i> 0329222293 </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-right header-quick-links"  >
+                        <ul id="menu" class="nav  nav-pills nav-stacked" style="float: right;" >
+                            <!-- <a type="button" *ngIf="isLoggedIn" (click)="moveToProfile();" class="btn btn-link" >Tài Khoản</a> -->
+                            <!-- <a type="button" *ngIf="!isLoggedIn" class="btn btn-link">Cửa Hàng</a> -->
+                            <!-- <div style="width: 295px !important;"></div> -->
+                            <a type="button" *ngIf="!isLoggedIn" (click)="moveToAccount();" class="btn btn-link" >Đăng Nhập / Đăng Ký</a>
+                            <button id="username" *ngIf="isLoggedIn"  style="background-color: transparent;border-color:
+                                     transparent;color: #008080 !important;float: right; "   disabled>Chào {{accountSocial.username}}
+                                     <!-- <img style="margin-left:10px;width: 30px;height: 30px;" src="{{accountSocial.imageUrl}}" id="imageAccountSocial" /> -->
+                                     
+                            </button>
+                            
+                            <li class="nav-item dropdown" style="display:flex !important" >
+                                <div class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false">
+                                <!-- <i class="material-icons" style=" font-size: 18px;">person</i> -->
+                                <!-- <img style="margin-left:10px;width: 30px;height: 30px;" src="{{accountSocial.imageUrl}}" id="imageAccountSocial" /> -->
+                                <!-- <button id="username" *ngIf="isLoggedIn"  style="background-color: transparent !important;border-color:
+                                     transparent;color: green; width: 300px;"   disabled>Chào {{accountSocial.username}}
+                                     <img style="margin-left:10px;width: 30px;height: 30px;" src="{{accountSocial.imageUrl}}" id="imageAccountSocial" />
+                                     
+                                </button> -->
+                                <img  id="username" *ngIf="isLoggedIn" style="margin-left:10px;width: 25px;height: 25px;cursor: pointer;" src="{{accountSocial.imageUrl}}" id="imageAccountSocial" />
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile" style="z-index: 200;">
+                                <!-- <a class="dropdown-item" (click)="moveToProfile();" style="cursor: pointer;">Tài Khoản</a> -->
+                                <a class="dropdown-item drop-options" type="button" *ngIf="isLoggedIn" style="cursor: pointer;" (click)="moveToProfile();"  >Tài Khoản</a>
+                                <div class="dropdown-divider"></div>
+                                <!-- <a class="dropdown-item" type="button" (click) = "logout();" style="cursor: pointer;">Đăng Xuất</a> -->
+                                    <a id="logout" *ngIf="isLoggedIn" class="dropdown-item drop-options" style="cursor: pointer;" (click)="logout();"  >Đăng Xuất</a>
+                                </div>
+                            </li>
+                            <!-- <a id="logout" *ngIf="isLoggedIn" (click)="logout();" class="btn btn-link" type="button">Đăng Xuất</a> -->
+
+                            <!-- <button id="username" *ngIf="statusLogin == 'true' && loginBy == 'loginbt' " style="background-color: transparent;border-color:
+                                     transparent;color: green;">Chào Mừng {{accountUser.username}}<img style="margin-left:10px;width: 30px;height: 30px;"
+                                      src={{accountUser.imageUrl}} id="imageAccountSocial" /></button>
+                                <button id="logout" *ngIf="statusLogin == 'true' && loginBy == 'loginbt'" (click)="logout();" style="background-color: transparent;border-color:
+                                     transparent;">Đăng Xuất
+                                     </button> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //TOPBAR -->
+        <!-- HEADER -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="row">
+                    <!-- LOGO -->
+                    <div class="col-xs-12 col-sm-6 col-lg-8 col-md-6 logo">
+                        <div class="site-logo">
+                            <a (click)="moveToHome();" title="Book Store" style="cursor: pointer;">
+                                <img class="logo-img" src="../../assets/img/02/Logo(1).png" alt="Book Store" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- //LOGO -->
+                    <!-- <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                    </div> -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 price-cart">
+                        <!-- bks-cart-widget -->
+                        <div class="bks-cart-widget right" style="font-family: 'Montserrat', sans-serif !important;">
+                            <div class="currency-switcher pull-left">
+                                <form method="post" action="#" class="woocommerce-currency-switcher-form ">
+                                    <label>Tổng Tiền : </label>
+                                    <label id="tongtien">&nbsp; {{ TongTien|currency:"VND" }}</label>
+                                </form>
+                            </div>
+                            <div class="mini-cart pull-right" style="cursor: pointer;">
+                                <div class="minicart-button">
+                                    <span class="cart-item-info jb-cart-section">
+                                     <a (click) = "moveToCart();"><label style="color: #666666;"></label><i class="fa fa-shopping-bag"></i></a>
+                                 <a class='cart-content' (click) = "moveToCart();" title='View your shopping cart'>
+                                    <span class='cart_items'>0</span></a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //bks-cart-widget -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //HEADER -->
+        <!-- MAIN NAVIGATION -->
+        <nav class="main-menu affix-top" data-spy="affix" data-offset-top="133.31" >
+            <div class="container">
+                <div id="vc-nav-id-16-wrapper" class=" vc-mm-menu-h  vc-mm-h-layout-5 vc-mm-container  vc-transparent ">
+                    <!-- <ul id="vc-nav-id-16-mobile" class="vc-nav-on-mobile vc-mm-m    enu">
+                        <li class="vc-menu-item  mobile-btn"><a class="nav-link" href="../../index.html"><i class="fa fa-home"></i></a> </li>
+                        <li class="vc-menu-item vc-mm-mobile-toggle">
+                            <a href="#" class="nav-link vc-mm-mobile-toggle-btn"><i class="fa fa-bars"></i></a>
+                            <h3 class="vc-mm-child-title lv-0">
+                                <span>Main Menu</span>
+                                <a class="vc-close" href="#"></a>
+                            </h3>
+                        </li>
+                    </ul> -->
+                    <ul id="vc-nav-id-16" data-menu-type="h" class="vc-nav-on-desktop vc-mm-menu" style="display: flex !important;" >
+                        <!-- <li class="vc-menu-item vc-mm-mobile-toggle">
+                            <a href="#" class="nav-link vc-mm-mobile-toggle-btn"><i class="fa fa-bars"></i></a>
+                            <h3 class="vc-mm-child-title lv-0">
+                                <span>Main Menu</span>
+                                <a class="vc-close" href="#"></a>
+                            </h3>
+                        </li> -->
+                        <!-- <a (click)="moveToHome();" title="Book Store" style="cursor: pointer; display: flex; text-align: center;align-items: center;">
+                            <img class="logo-img" src="../../assets/img/02/Logo(1).png" alt="Book Store" />
+                            
+                        </a> -->
+                        <!-- <li class="logo" (click)="moveToHome();" title="Book Store" style="cursor: pointer; display: flex; text-align: center;align-items: center;">Book Store</li> -->
+                        <li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-30 vc-menu-item vc-d-0 vc-mm-layout-full"><a style="cursor: pointer;" (click)="moveToHome()" class="nav-link" id="headSet"><span class="vc-label">Trang Chủ</span></a>
+
+                        </li>
+                        <li id="menu-item-118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-118 vc-menu-item vc-d-0 vc-mm-mega vc-mm-align-default vc-mm-layout-full" data-mm-settings="{&quot;layout&quot;:&quot;full&quot;,&quot;width&quot;:&quot;&quot;}">
+                            <a class="nav-link" id="headSet"><span class="vc-label">Thể Loại</span></a>
+                            <div class="vc-mm-mega-cont" id="headSet2">
+                                <div class="vc-mm-mega-cont-inner">
+                                    <div class="vc_row wpb_row vc_row-fluid">
+                                        <div class="page-container">
+                                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner vc_custom_1454743982508">
+                                                    <div class="wpb_wrapper">
+                                                        <h3 style="text-align: left" class="vc_custom_heading">Thể Loại</h3>
+                                                        <div class="vc_wp_custommenu wpb_content_element">
+                                                            <div class="widget widget_nav_menu">
+                                                                <div class="menu-novel-container">
+                                                                    <ul id="menu-novel" class="menu ">
+                                                                        <li style="cursor: pointer;" id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-120" *ngFor="let categories of bookCategoryService.categories |
+                                                                        paginate: { id:'2',itemsPerPage: 8,currentPage: p } "><a (click)=goToCategory(categories._id)>{{categories.nameCategory}}</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner vc_custom_1454743982508">
+                                                    <div class="wpb_wrapper">
+                                                        <img src="../../assets/img/02/Colorful School Retail Store Sale Poster.png" alt="" style="width:200px !important; height: 200px !important; text-align: right !important;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner vc_custom_1454743993099">
+                                                    <div class="wpb_wrapper">
+                                                        <h3 style="text-align: left" class="vc_custom_heading">Khác</h3>
+                                                        <div class="vc_wp_custommenu wpb_content_element">
+                                                            <div class="widget widget_nav_menu">
+                                                                <div class="menu-business-container">
+                                                                    <ul id="menu-business" class="menu">
+                                                                        <li style="cursor: pointer;" id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-125" *ngFor="let item of [0,1,2,3,4];"><a (click)=goToCategory(topCategory[item]._id)>{{topCategory[item]?.nameCategory}}</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner ">
+                                                    <div class="wpb_wrapper">
+                                                        <div class=''>
+                                                            <div class='dis-bottom-left'>
+                                                                <div class='dis-bottom-left-img'><img src='{{topCategory[0]?.imgCategory}}' alt='TEXT BOOKS'>
+                                                                    <div class='dis-bottom-left-content'>
+                                                                        <div class='dis-bottom-left-text'>
+                                                                            <h6 style='color:#323232'>THỂ LOẠI</h6>
+                                                                            <h2 style='color:#27ae61'>{{topCategory[0]?.nameCategory}}</h2><a (click)=goToCategory(topCategory[0]._id) style='color:#212121;cursor: pointer;' class='btn-link'>Vào Xem<em class='fa fa-long-arrow-right'></em></a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="menu-item-118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-118 vc-menu-item vc-d-0 vc-mm-mega vc-mm-align-default vc-mm-layout-full" data-mm-settings="{&quot;layout&quot;:&quot;full&quot;,&quot;width&quot;:&quot;&quot;}">
+                            <a class="nav-link" id="headSet"><span class="vc-label">Tác Giả</span></a>
+                            <div class="vc-mm-mega-cont" id="headSet2">
+                                <div class="vc-mm-mega-cont-inner">
+                                    <div class="vc_row wpb_row vc_row-fluid">
+                                        <div class="page-container">
+                                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner vc_custom_1454743982508">
+                                                    <div class="wpb_wrapper">
+                                                        <h3 style="text-align: left" class="vc_custom_heading"> Tác Giả</h3>
+                                                        <div class="vc_wp_custommenu wpb_content_element">
+                                                            <div class="widget widget_nav_menu">
+                                                                <div class="menu-novel-container">
+                                                                    <ul id="menu-novel" class="menu">
+                                                                        <li style="cursor: pointer;" id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-120" *ngFor="let authors of authorService.authors |
+                                                                        paginate: { id:'2',itemsPerPage: 8,currentPage: p }"><a (click)=goToAuthor(authors._id)>{{authors.nameAuthor}}</a></li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                                <div class="vc_column-inner vc_custom_1454743982508">
+                                                    <div class="wpb_wrapper">
+                                                        <img src="../../assets/img/02/book9.png" alt="" style="width:300px !important; height: 300px !important; text-align: right !important;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
+                                                <div class="vc_column-inner vc_custom_1454743993099">
+                                                    <div class="wpb_wrapper">
+                                                        <h3 style="text-align: left" class="vc_custom_heading">Khác</h3>
+                                                        <div class="vc_wp_custommenu wpb_content_element">
+                                                            <div class="widget widget_nav_menu">
+                                                                <div class="menu-business-container">
+                                                                    <ul id="menu-business" class="menu">
+                                                                        <li style="cursor: pointer;" id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-125" *ngFor="let item of [5,6,7,8,9];"><a (click)=goToAuthor(topAuthor[item]._id)>{{topAuthor[item]?.nameAuthor}}</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="wpb_column vc_column_container vc_col-sm-4">
+                                                <div class="vc_column-inner ">
+                                                    <div class="wpb_wrapper">
+                                                        <div class=''>
+                                                            <div class='dis-bottom-left'>
+                                                                <div class='dis-bottom-left-img'><img src='../../assets/img/01/home-1-text-book.jpg' alt='TEXT BOOKS'>
+                                                                    <div class='dis-bottom-left-content'>
+                                                                        <div class='dis-bottom-left-text'>
+                                                                            <h6 style='color:#323232'>Tác Giả</h6>
+                                                                            <h2 style='color:#27ae61'>{{topAuthor[0]?.nameAuthor}}</h2><a (click)=goToAuthor(topAuthor[0]._id) style='color:#212121;cursor: pointer;' class='btn-link'>Vào Xem<em class='fa fa-long-arrow-right'></em></a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="menu-item-136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136 vc-menu-item vc-d-0 vc-mm-mega vc-mm-align-default vc-mm-layout-full" data-mm-settings="{&quot;layout&quot;:&quot;full&quot;,&quot;width&quot;:&quot;&quot;}">
+                            <a style="cursor: pointer;" (click)=goToSale() class="nav-link" id="headSet"><span class="vc-label">Đang Giảm Giá</span></a>
+
+                        </li>
+                        <div id="InputSearc" class="searchBar">
+                            <!-- <span class="inputicon">
+                                
+                            </span> -->
+                            
+                            
+                            
+                            <input class=" searchInput" placeholder="Tìm kiếm trên Book Store" type="text" (change)="getInputSearch($event)">
+                           
+                            <a class="buttonSearc searchIcon" type="button" (click)="Search()"><i class="fa fa-search"  aria-hidden="true" style="font-size: 14px;"></i></a>
+                            <!-- <div class="searchbar">
+                                <input class="search_input" type="text" name="" placeholder="Search...">
+                                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                              </div> -->
+                            
+                        </div>
+                        
+                        <!-- <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 vc-menu-item vc-d-0 vc-mm-layout-full"><a href="../../shop/index.html" class="nav-link"><span class="vc-label">Cửa Hàng</span></a></li>
+                        <li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-151 vc-menu-item vc-d-0 vc-mm-layout-full"><a href="#" class="nav-link"><span class="vc-label">Liên Hệ</span></a>
+
+                        </li> -->
+
+
+                    </ul>
+
+                </div>
+            </div>
+            <a *ngIf="!accountSocial" (click)="moveToAccount()" style="cursor: pointer;"><img id="wheelSpinnerImg" src="../../../assets/spinner/img_spin/spinner.png"></a>
+            <a *ngIf="accountSocial" (click)="getPointByUserID()" style="cursor: pointer;" data-toggle="modal" data-target="#myModal1"><img id="wheelSpinnerImg" src="../../../assets/spinner/img_spin/spinner.png"></a>
+        </nav>
+        <router-outlet></router-outlet>
+
+        <!-- FOOTER -->
+        <footer id="bks-footer" class="wrap bks-footer">
+            <!-- FOOT NAVIGATION -->
+            <div class="footer-nav" style="font-family: 'Montserrat', sans-serif !important;">
+                <div class="container">
+                    <!-- SPOTLIGHT -->
+                    <div class="bks-spotlight bks-footnav row">
+
+                        <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="widget bks-module">
+                                <a href="index.html" title="Book Store">
+                                    <img class="logo-img" src="../../assets/img/02/Logo(1).png" alt="Book Store" />
+                                </a>
+                            </div>
+                            <div id="text-2" class="widget t3-module module widget_text">
+                                <div class="textwidget">
+                                    <ul class='bks_icon_list '>
+                                        <li>
+                                            <div class='list_content'><i class="icon-footer far fa-paper-plane"></i> Võ Văn Ngân P.Linh Chiểu TP Thủ Đức, TP. Hồ Chí Minh</div>
+                                        </li>
+                                    </ul>
+                                    <ul class='bks_icon_list '>
+                                        <li>
+                                            <div class='list_content' ><i class="icon-footer fas fa-phone"></i>Phone: 0329222293</div>
+                                        </li>
+                                    </ul>
+                                    <ul class='bks_icon_list '>
+                                        <li>
+                                            <div class='list_content'><i class="icon-footer fas fa-envelope"></i> Email: bookstoreute@gmail.com
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div id="nav_menu-2" class="widget t3-module module widget_nav_menu">
+                                <h2 class="widget-title">Hướng Dẫn Mua Sắm</h2>
+                                <div class="menu-footer-menu-1-container" style="font-size: 12px !important;">
+                                    <ul id="menu-footer-menu-1" class="menu" >
+                                        <li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156"><a href="#">Mua Sách Trong Cửa Hàng</a></li>
+                                        <li id="menu-item-157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-157"><a href="#">Lấy Mã Giảm Giá</a></li>
+                                        <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="#">Thanh Toán Đơn Hàng</a></li>
+                                        <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="#">Ưu Đãi Vip</a></li>
+                                        <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="#">Đánh Giá Sản Phẩm</a></li>
+                                        <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="#">Danh Sách Yêu Thích</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div id="nav_menu-3" class="widget t3-module module widget_nav_menu">
+                                <h2 class="widget-title">THÔNG TIN</h2>
+                                <div class="menu-footer-menu-2-container">
+                                    <ul id="menu-footer-menu-2" class="menu">
+                                        <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a href="#">Về Chúng Tôi</a></li>
+                                        <li id="menu-item-163" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163"><a href="#">Thông Tin Giao Hàng</a></li>
+                                        <li id="menu-item-164" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-164"><a href="#">Chính Sách Bảo Mật</a></li>
+                                        <li id="menu-item-165" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-165"><a href="#">Chế Độ Ưu Đãi</a></li>
+                                        <li id="menu-item-166" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-166"><a href="#">Quyền Truy Cập Khách Hàng</a></li>
+                                        <li id="menu-item-167" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167"><a href="#">Hỗ Trợ 24/7</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div id="text-5" class="widget t3-module module widget_text">
+                                <h2 class="widget-title">Địa chỉ cửa hàng</h2>
+                                <div class="textwidget"><img src="../../assets/img/02/worldmap.png" alt="Locations" /></div>
+                            </div>
+                            <div id="wp-social-widget-2" class="widget t3-module module widget_wp-social-widget">
+                                <ul class='social-links'>
+                                    <li><a href="#"><span class="social-icon sicon-behance"></span></a></li>
+                                    <li><a href="#"><span class="social-icon sicon-facebook"></span></a></li>
+                                    <li><a href="#"><span class="social-icon sicon-google"></span></a></li>
+                                    <li><a href="#"><span class="social-icon sicon-instagram"></span></a></li>
+                                    <li><a href="#"><span class="social-icon sicon-linkedin"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SPOTLIGHT -->
+                </div>
+            </div>
+            <!-- //FOOT NAVIGATION -->
+
+
+            <div class="bks-copyright">
+                <div class="container">
+                    <div class="row">
+                        <!-- //COPYRIGHTS -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-12 copyright">
+                                <small>Long Hồ - Trần Thành Phát 2021 BookStore MEAN STACK</small>
+                            </div>
+                        </div>
+                        <!-- Footer Right Content -->
+                        <div class="col-md-6 col-sm-6 col-xs-11">
+                            <div class="right">
+                                <img class="alignnone size-full wp-image-327" src="../../assets/img/02/payments_logos.png" alt="payments_logos" width="222" height="18" /> </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //FOOTER -->
+
+    </div>
+    <!-- modal add book -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1041;">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h4 class="modal-title" id="exampleModalLabel" style="color: #ff7675;font-size: 15px;text-align: left !important; width: 720px;">
+                        <b>Vòng Quay May Mắn</b>
+                        
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="border-top: none;">
+                                <div><b> Điểm Hiện Tại Của Bạn : <span id="pointcur"style="color:#5858FA;">{{point.point}} Điểm</span></b></div>
+                                <div style="padding: 10px;">
+                                    <div>1.Mỗi lần đơn hàng đã được giao bạn sẽ được cộng 1điểm/10.000đ</div>
+                                    <div>2.Với mỗi 80 điểm cho một lần quay</div>
+                                    <div>3.Bạn sẽ nhận được các ưu đãi tương ứng tùy vào vận may của bạn</div>
+
+                                </div>
+
+                                <div>
+                                    <button id="spin_start" class="btn">Quay Ngay </button>
+                                    <button id="spin_reset" class="btn" style="margin-left:10px;">Quay Lại</button>
+                                </div>
+                                <div><img style="width:400px;height:320px;" src="../../../assets/spinner/img_spin/happy-new-year-2022-banner-template_96807-738.jpg"></div>
+                            </td>
+                            <td width="434" height="510" class="the_wheel" valign="center" style="border-top: none;">
+                                <canvas id="canvas" width="436" height="436" style="margin-top: 30px;margin-left: -1px;">
+                                    <p>Sorry, your browser doesn't support canvas. Please try another.</p>
+                                </canvas>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

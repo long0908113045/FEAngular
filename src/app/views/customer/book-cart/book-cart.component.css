@@ -1,0 +1,150 @@
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-layout72e6.css';
+@import '../../../../assets/plugins/woocommerce/assets/css/woocommerce-smallscreen72e6.css';
+@import '../../../../assets/plugins/vc-mega-menu/assets/frontend/vc-mm676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/font-awesome/css/font-awesome.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/bootstrap.min676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/common676a.css';
+@import '../../../../assets/themes/bookstore/assets/css/styles676a.css';
+@import '../../../../assets/themes/bookstore/includes/wp-social-widget/assets/css/social-icons8a54.css';
+.bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+::ng-deep .swal-button--confirm{
+    background-color: red !important;
+}
+.product {
+    width: 30%;
+    margin: 30px;
+}
+
+.form-group {
+    width: 30%;
+    margin: 30px;
+}
+
+.form-group .glyphicon {
+    color: #95d7fc;
+}
+
+.category_block li:hover {
+    background-color: #007bff;
+}
+
+.category_block li:hover a {
+    color: #ffffff;
+}
+
+.category_block li a {
+    color: #343a40;
+}
+
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+
+.add_to_cart_block .price_discounted {
+    color: #8a929b;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+
+.reviews_product .fa-star {
+    color: gold;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+#login:hover {
+    color: green;
+}
+
+#about:hover {
+    color: green;
+}
+#continue {
+    border: solid 1px #008080;
+}
+#continue:hover {
+    background-color: #dfe6e9;
+    color: #008080;
+}
+
+#scroll {
+    overflow-y: auto;
+    height: 400px;
+}
+
+.table-image thead td,
+.table-image thead th {
+    border: 0;
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.table-image td,
+.table-image th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-image td.qty,
+.table-image th.qty {
+    max-width: 2rem;
+}
+
+.price {
+    margin-left: 1rem;
+}
+
+.modal-footer {
+    padding-top: 0rem;
+}
+
+#profile th {
+    position: relative;
+    left: -25px;
+    width: 30px;
+    padding-top: 10px;
+}
+
+.btn-success {
+    background-color: #008080 !important;
+   
+}
+.btn-success:hover {
+    /* color: #e17055 !important; */
+    background-color: #00b894 !important;
+}
+.ju-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

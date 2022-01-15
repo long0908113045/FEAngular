@@ -1,0 +1,25 @@
+
+@import '../../../../assets/css_admin/css/material-dashboard.css';
+.dropdown-menu .dropdown-item{
+    font-size: 12px;
+}
+
+#banner_image {
+    min-height: calc(100vh - 250px);
+    background-image:
+      url("../../../../assets/css_admin/img/sidebar-1.jpg");
+  }
+  div[data-image] {   
+    background-image: attr(data-image url);
+}
+.sidebar{
+    background:  linear-gradient(
+        rgba(192,192,192,0.3), 
+        rgba(171, 161, 247, 1)
+      )    
+      ,
+     url('../../../../assets/css_admin/img/sidebar-1.jpg');
+}
+agm-map{
+    height: 600px;
+}

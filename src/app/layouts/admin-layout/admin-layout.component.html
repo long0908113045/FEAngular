@@ -1,0 +1,177 @@
+<div class="main-all">
+
+
+<mat-drawer-container class="example-container" autosize>
+    <!-- <mat-drawer #drawer class="example-sidenav" mode="side"> -->
+       <!-- <button type="button" mat-button (click)="drawer.toggle()">X</button> -->
+       
+       
+       <div class="sidebar" data-color="purple" >
+        
+        <div class="logo">
+            <a (click)="moveToDashboard();" class="simple-text logo-normal">
+                <mat-icon style="padding-right: 10px; font-size: 20px; color: #008080;">book</mat-icon>BookStore</a>
+            </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav tree" style="font-family: 'Noto Serif', serif !important;" >
+                 <!-- <li class="nav-item active">
+                    <a class="nav-link " type="button" (click)="moveToDashboard();">
+                        <i class="material-icons">dashboard</i>
+                        <p>Màn hình chính</p>
+                 </a>
+                </li> 
+                <li class="nav-item ">
+                    <a class="nav-link" type="button" (click)="moveToManagePage();">
+                        <i class="material-icons">supervised_user_circle</i>
+                        <p >Quản lý</p>
+                    </a>
+                   
+                </li> -->
+
+           
+
+                <li id="menu12">
+                    <label for="menu12" type="button" >
+                        <mat-icon class="icon-db">dashboard</mat-icon>
+                    <a>Màn hình chính</a>
+                    </label>
+                    <input checked="" id="menu15" (click)="moveToDashboard();" value="" type="checkbox">
+                    <!-- <mat-button-toggle id="menu15" (click)="moveToDashboard();" value="bold"></mat-button-toggle> -->
+                    
+                 </li>
+                 <li id="menu15">
+                    <label for="menu15" type="button" (dblclick)="moveToManagePage()" (click)="moveToManagePage();">
+                        <mat-icon class="icon-menu"> list_alt</mat-icon>
+                        <a >Quản lý</a>
+                    </label>
+                    <input checked="" id="menu15" (dblclick)="moveToManagePage()" value="" type="checkbox">
+                    
+                    <ul>
+                      
+                       <li id="menu17">
+                          <label for="menu17"><a>Quản lý hóa đơn</a></label>
+                          <input checked="" id="menu17" value="" (click)="moveToManageOrder()" type="checkbox">  
+                       </li>
+
+                       <li id="menu18">
+                            <label for="menu18"><a>Quản lý tác giả</a></label>
+                            <input checked="" id="menu18" value="" (click)="moveToManageAuthor();" type="checkbox">
+                        </li>
+
+                        <li id="menu19">
+                            <label  for="menu19"><a>Quản lý sách</a></label>
+                            <input checked="" id="menu19" (click)="moveToManageBook();" value="" type="checkbox">
+                        </li>
+                        <li id="menu19">
+                            <label  for="menu19"><a>Quản lý loại sách</a></label>
+                            <input checked="" id="menu19" (click)="moveToManageCategory();" value="" type="checkbox">
+                        </li>
+                        <li id="menu19">
+                            <label  for="menu19"><a>Quản lý seri sách</a></label>
+                            <input checked="" id="menu19" (click)="moveToManageSeri();" value="" type="checkbox">
+                        </li>
+                        <li id="menu19">
+                            <label  for="menu19"><a>Quản lý sự kiện</a></label>
+                            <input checked="" id="menu19" (click)="moveToManageEvent();" value="" type="checkbox">
+                        </li>
+                        <li id="menu19">
+                            <label  for="menu19"><a>Quản lý người dùng</a></label>
+                            <input checked="" id="menu19" (click)="moveToManageUser();" value="" type="checkbox">
+                        </li>
+                    </ul>
+                 </li>
+            </ul>
+            <!-- <ul class="tree">
+                <li id="menu12">
+                   <label for="menu12">
+                   <a>2015</a>
+                   </label>
+                   <input checked="" id="menu12" value="" type="checkbox">
+                   <ul>
+                      <li id="menu13">
+                         <label for="menu13"><a>December</a></label>
+                        
+                      </li>
+                      <li id="menu13">
+                        <label for="menu13"><a>Decembe asasaasar</a></label>
+                       
+                     </li>
+                   </ul>
+                </li>
+                <li id="menu15">
+                   <label for="menu15"><a>2014</a></label>
+                   <input checked="" id="menu15" value="" type="checkbox">
+                   <ul>
+                     
+                      <li id="menu17">
+                         <label for="menu17"><a>October</a></label>
+                         <input checked="" id="menu17" value="" type="checkbox">
+                         
+                      </li>
+                   </ul>
+                </li>
+               
+             </ul> -->
+            
+        </div>
+        
+    </div>
+    <!-- </mat-drawer> -->
+    
+    <!-- <div class="touch-bar">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon>horizontal_split</mat-icon>
+        </button>
+        
+      </div> -->
+      
+  
+  </mat-drawer-container>
+<router-outlet></router-outlet>
+<div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+        <a href="#" data-toggle="dropdown" style="font-size: 25px;">
+            <i class="fas fa-sliders-h"></i>
+        </a>
+        <ul class="dropdown-menu" style="display: none;">
+            <li class="header-title" style="width: 100%;"> Sidebar Filters</li>
+            <li class="adjustments-line" style="width: 100%;">
+                <a href="javascript:void(0)" class="switch-trigger active-color">
+                    <div class="badge-colors ml-auto mr-auto">
+                        <span class="badge filter badge-purple" data-color="purple"></span>
+                        <span class="badge filter badge-azure" data-color="azure"></span>
+                        <span class="badge filter badge-green" data-color="green"></span>
+                        <span class="badge filter badge-warning" data-color="orange"></span>
+                        <span class="badge filter badge-danger" data-color="danger"></span>
+                        <span class="badge filter badge-rose active" data-color="rose"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li class="header-title" style="width: 100%;">Images</li>
+            <li class="active">
+                <a class="img-holder " id="img1">
+                    <img src="../../../../assets/css_admin/img/sidebar-1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="img-holder " id="img2">
+                    <img src="../../../../assets/css_admin/img/sidebar-2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="img-holder switch-trigger" id="img3">
+                    <img src="../../../../assets/css_admin/img/sidebar-3.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="img-holder switch-trigger" id="img4">
+                    <img src="../../../../assets/css_admin/img/sidebar-4.jpg" alt="">
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+</div>

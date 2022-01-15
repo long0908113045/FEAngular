@@ -1,0 +1,192 @@
+@import '../../../assets/css_admin/css/material-dashboard.css';
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css";
+.dropdown-menu .dropdown-item{
+    font-size: 12px;
+}
+
+#banner_image {
+    min-height: calc(100vh - 250px);
+    background-image:
+      url("../../../assets/css_admin/img/sidebar-1.jpg");
+  }
+  div[data-image] {   
+    background-image: attr(data-image url);
+}
+.sidebar{
+    background:  linear-gradient(
+        rgba(255, 255, 255, 0.816), 
+        rgb(255, 255, 255)
+      )    
+      ,
+     url('../../../assets/css_admin/img/sidebar-1.jpg') !important;
+}
+.dropdown-menu{
+    display: none; 
+    will-change: transform ;
+     position: absolute ;
+      transform: translate3d(0, 0, 0) !important; 
+      top: 0px ; left: 0px ;
+}
+
+.example-sidenav {
+    position: absolute;
+    width: 255px;
+    height: 100%;
+}
+.main-all {
+    position: relative;
+}
+/* .example-container {
+    z-index: 1;
+} */
+button {
+    border: none !important;
+    line-height: 20px;
+    cursor: pointer;
+    outline:none !important;
+  
+}
+.touch-bar {
+    background-color: #f5f6fa;
+}
+.touch-bar-color {
+    background-color: #f5f6fa;
+    width: 10px;
+    height: 100vh;
+}
+
+
+
+
+
+
+
+ul.tree {
+  margin: 0;
+  padding: 2px 20px;
+}
+ul.tree li {
+  list-style: none;
+  margin-left: -15px;
+  position: relative;
+}
+ul.tree li input {
+  cursor: pointer;
+  /* height: 1em; */
+  left: 0;
+  margin-left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 220px !important;
+  height: 50px !important;
+  z-index: 2;
+  
+  
+}
+ul.tree li input:checked label:checked + ul {
+  height: auto;
+  margin: 0px 0px 0px -19px;
+}
+ul.tree li input:checked  + ul:after {
+  content: "\f107";
+  font-family: Fontawesome;
+  font-size: 20px;
+  left: 200px;
+  margin-right: 5px;
+  position: absolute;
+  top: 15px;
+}
+ul.tree li input:checked + ul > li {
+  display: block;
+  left: -3px;
+  margin: 0 0 3px;
+}
+ul.tree li input:checked + ul > li last-child {
+  margin: 0 0 0.063em;
+}
+ul.tree li input + ul {
+  padding: 0 0 0 10px;
+}
+ul.tree li input + ul:after {
+  content: "\f105";
+  font-family: Fontawesome;
+  font-size: 20px;
+  left: 200px;
+  margin-right: 5px;
+  position: absolute;
+  top: 15px;
+}
+ul.tree li input + ul > li {
+  display: none;
+  margin-left: -10px;
+  padding-left: 1px;
+}
+ul.tree li label {
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-left: 17px;
+}
+ul.tree > li {
+  margin-left: -1px !important;
+  height: 50px !important;
+}
+ul.tree > li a {
+  color: #606061;
+  display: block;
+  text-decoration: none;
+}
+ul.tree > li a:before {
+  content: "";
+  display: block;
+  float: left;
+  font-family: Fontawesome;
+  font-size: 15px;
+  margin-right: 5px;
+}
+ul.tree > li > a:after {
+  content: "\f0c9";
+  display: block;
+  float: left;
+  font-family: Fontawesome;
+  font-size: 15px;
+  margin-right: 5px;
+}
+ul.tree > li > a > label {
+  margin-left: 0;
+}
+ul.tree > li > ul > li > a > label:before,
+ul.tree > li > ul > li > ul > li > a > label:before {
+  content: "\f0c9";
+  display: block;
+  position: absolute;
+  font-family: Fontawesome;
+  font-size: 15px;
+  margin-right: 5px;
+  left: 0px;
+}
+#menu12, #menu15 label {
+    position: relative;
+}
+#menu12 label .icon-db {
+    position: absolute;
+    top: 15px;
+    left: 7px;
+}
+#menu15 label  .icon-menu {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+}
+.icon-db, .icon-menu  {
+    color: blue;
+}
+
+#menu12:hover, #menu17:hover,#menu18:hover,#menu19:hover {
+  background-color: #dcdde1;
+  border-radius: 5px;
+  
+}
+

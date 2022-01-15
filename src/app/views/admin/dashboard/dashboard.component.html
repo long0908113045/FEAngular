@@ -1,0 +1,210 @@
+<head>
+    <meta charset="utf-8" />
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+</head>
+
+<body class="">
+    <div class="wrapper">
+
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <!-- End Navbar -->
+            <style>
+                fieldset {
+                    /* background-color: #eeeeee; */
+                    border: 1px solid gray;
+                }
+                
+                legend {
+                    background-color: gray;
+                    color: white;
+                    padding: 5px 10px;
+                }
+            </style>
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <fieldset style="color: rgb(134, 26, 26);">
+                        <legend style="width: 150px;font-weight: 700;font-size: 18px;margin-left: 15px;">Lọc Thông Tin</legend>
+                        <div class="row" id="selectOption">
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+								<input class="form-check-input" type="checkbox" name="year" id="year" value="" disabled checked>
+								<span class="form-check-sign">
+									<span class="check"></span>
+								</span>
+								</label>
+                                    <mat-form-field style="color: black;">
+                                        <mat-label style="font-size: 15px;">Theo Năm</mat-label>
+                                        <select matNativeControl (change)="changeYear($event.target.value)">
+									
+									<!-- <option value="2019">2019</option>
+									<option value="2020">2020</option> -->
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+								</select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+									<input class="form-check-input" type="checkbox" name="month" [(ngModel)]="isChecked" (change)="checkValue(isChecked)" id="month" value="" >
+									<span class="form-check-sign">
+										<span class="check"></span>
+									</span>
+									</label>
+                                    <mat-form-field style="color: black;" id="field_month">
+                                        <mat-label style="font-size: 15px;">Theo Tháng</mat-label>
+                                        <select matNativeControl (change)="changeMonth($event.target.value)" id="select_month">
+									<option value="Jan" style="margin: 0 auto;" >1</option>
+									<option value="Feb" >2</option>
+									<option value="Mar">3</option>
+									<option value="Apr" >4</option>
+									<option value="May">5</option>
+									<option value="Jun" >6</option>
+									<option value="Jul">7</option>
+									<option value="Aug" >8</option>
+									<option value="Sep">9</option>
+									<option value="Oct" >10</option>
+									<option value="Nov">11</option>
+									<option value="Dec" >12</option>
+								</select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">face</i>
+                                    </div>
+                                    <p *ngIf="bestUserName != ''" class="card-category">{{ bestUserName }}</p>
+                                    <h3 class="card-title">{{ totalYearOfCustomer | currency:'VND' }}
+                                    </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-danger">face</i>
+                                        <a href="javascript:;">Khách Hàng Tiềm Năng</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">store</i>
+                                    </div>
+                                    <p class="card-category">Doanh Thu</p>
+                                    <h3 class="card-title">{{ totalYear | currency:'VND' }}</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-danger">store</i>
+                                        <a href="javascript:;">Doanh Thu Cửa Hàng</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-danger card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">book</i>
+                                    </div>
+                                    <p class="card-category">Số Lượng Sách Đã Bán</p>
+                                    <h3 class="card-title">{{countBookBuy}}</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-danger">book</i>
+                                        <a href="javascript:;">Số Lượng Sách Đã Bán</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">   
+                                <div class="card-header card-header-info card-header-icon">
+                                    <div class="card-icon" style="width:86px; height:86px; text-align: center;">
+                                        <i style="font-size: 35px;" class="fab fa-twitter"></i>
+                                    </div>
+                                    <p class="card-category">Lượng Người Dùng Tương Tác</p>
+                                    <h3 class="card-title">{{countAllUser}}</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">update</i> Just Updated
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-chart">
+                                <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" id="canvas_chart1"></canvas>
+
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">pie_chart</i> Biểu đồ doughnut biểu thị 4 tựa sách được mua nhiều nhất
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-chart">
+                                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">bar_chart</i> Biểu đồ cột biểu thị số sách bán và doanh thu theo từng tháng
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="card card-chart">
+                                <div class="card-header">
+                                  <h5 class="card-category">Email Statistics</h5>
+                                  <h4 class="card-title">24 Hours Performance</h4>
+                                </div>
+                                <div class="card-body">
+                                  <div class="chart-area">
+                                    <canvas baseChart id="barChartSimpleGradientsNumbers"
+                                                [datasets]="barChartData"
+                                                [labels]="barChartLabels"
+                                                [options]="barChartOptions"
+                                                [chartType]="barChartType"></canvas>
+                                  
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="stats">
+                                    <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
+                                  </div>
+                                </div>
+                              </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+
+</body>

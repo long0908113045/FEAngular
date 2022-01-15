@@ -1,0 +1,87 @@
+<head>
+    <meta charset="utf-8" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+</head>
+
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" style="font-size: 13px;">
+            <!-- Navbar -->
+            <app-header></app-header>
+            <!-- End Navbar -->
+            <div class="content" style="background-color: #EEEEEE;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h3 class="card-title ">Quản lý seri</h3>
+                                    <!-- <a ><span><i class="fa fa-plus"></i></span></a>  -->
+                                    <p *ngIf="alertSuccess" style="color: yellow;font-size: 18px;text-align: center;">{{alertMessage}}</p>
+
+                                </div>
+                                <div class="card-body" style="font-size: 14px;">
+                                    <div class="table-responsive">
+                                        <div class="mat-elevation-z8">
+                                    <button type="button" class="btn btn-blue" style="float: right;font-size: 13px;" (click)="addSeri();">Thêm seri&nbsp;&nbsp;&nbsp;<span  style="float: right;"><i class="fa fa-plus"></i></span></button>
+
+                                            <table mat-table [dataSource]="dataSource" matSort style="width: 100%;" id="mytable">
+
+
+                                                <ng-container matColumnDef="seriName">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> Tên seri</th>
+                                                    <td mat-cell *matCellDef="let row"> {{row.seriName}}</td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="empty2">
+                                                    <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                                    <td mat-cell *matCellDef="let row"></td>
+                                                </ng-container>
+                                                
+
+                                                <ng-container matColumnDef="Details">
+                                                    <th mat-header-cell *matHeaderCellDef> Chi Tiết Seri</th>
+                                                    <td mat-cell *matCellDef="let element"> <a mat-raised-button (click)="getSeriById(element._id)"><i class="fas fa-info"></i></a> </td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="Edit">
+                                                    <th mat-header-cell *matHeaderCellDef class="aln-center"> Cập Nhật Thông Tin </th>
+                                                    <td mat-cell *matCellDef="let element" class="aln-center"> <a mat-raised-button style="color: blue;" (click)="updateSeriById(element._id)"><i class="material-icons">edit</i></a> </td>
+                                                </ng-container>
+
+                                                <ng-container matColumnDef="Delete" style="float: right;">
+                                                    <th mat-header-cell *matHeaderCellDef> Xóa Thông Tin </th>
+                                                    <td mat-cell *matCellDef="let element"> <a mat-raised-button style="color: red;" (click)="deleteSeriById(element._id)"><i class="material-icons">delete</i></a> </td>
+                                                </ng-container>
+
+
+                                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                                                </tr>
+                                            </table>
+
+                                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+                                            </mat-paginator>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+</body>
